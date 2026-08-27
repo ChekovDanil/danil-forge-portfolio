@@ -2,7 +2,7 @@
   "generatedAt": "2026-08-27",
   "title": "Personal product portfolio",
   "status": "source-ready-owner-input-required",
-  "selectedCases": 8,
+  "selectedCases": 7,
   "directions": [
     "web-products",
     "automation",
@@ -21,8 +21,8 @@
   "files": [
     {
       "name": "README.md",
-      "bytes": 1746,
-      "sha256": "2507506E05A158AD4896572B434F0EA1A4303F49B5A51099EA64A2F26BE29477"
+      "bytes": 1589,
+      "sha256": "1472C3CEB8584D0CDE46D8B609B1C15ADCD412D01EAC5BB48FB9B75B865CB9F7"
     },
     {
       "name": "package.json",
@@ -35,29 +35,9 @@
       "sha256": "D514B1639E1E88BF8B98D14815B7A5B9DD2C022E9F00DA136434F1BC411ACFF5"
     },
     {
-      "name": "public/assets/clientspace-cover.png",
-      "bytes": 2058033,
-      "sha256": "2A2D493C698F511BE829BC5DD8C62F4F5974A221ABEDFF0EC36590D6498C7C1A"
-    },
-    {
-      "name": "public/assets/clientspace-desktop.png",
-      "bytes": 67184,
-      "sha256": "3B37629B2BEB3AE25A20AD555FF1983EE80989431405BDB843F8F181FE86B9E3"
-    },
-    {
-      "name": "public/assets/clientspace-mobile.png",
-      "bytes": 53420,
-      "sha256": "28CF357C88B93167F62BDD610CD3180060D5FE2645AD2804EB0502E074F24E64"
-    },
-    {
       "name": "public/assets/fielddesk.png",
       "bytes": 781572,
       "sha256": "C2565DE1A57699F81E7D06B719CB65222F6B02847DDC8F9AB828FF01E1B9B2F2"
-    },
-    {
-      "name": "public/assets/locus-hero.png",
-      "bytes": 675689,
-      "sha256": "812F109FBC18E31CD4623AC8D3B5CD0B5E9D2CA932F5B2330EE03011E6253F7A"
     },
     {
       "name": "public/assets/relay.jpg",
@@ -73,11 +53,6 @@
       "name": "public/assets/reportkit.jpg",
       "bytes": 58899,
       "sha256": "A1075D9C3DD7EDF41998748CA2B3E2D8DA0FA32D68B541DC2899E6B9C4276849"
-    },
-    {
-      "name": "public/assets/reportkit.png",
-      "bytes": 2409117,
-      "sha256": "F87FE0A937662549822C48EBAD219C6FAB720C1E824B1EF1E36C090EE6B24536"
     },
     {
       "name": "public/assets/social-preview.png",
@@ -96,8 +71,8 @@
     },
     {
       "name": "public/index.html",
-      "bytes": 9432,
-      "sha256": "90FB555F372DA13BF4E21F896C2716451DEE7FE5F92910D526B9F772665BCD7D"
+      "bytes": 8780,
+      "sha256": "014CE4934440DC3F4790DBECE146B9AFA20F53CC34E07B4E7579D40574BFFCCB"
     },
     {
       "name": "public/style.css",
@@ -111,8 +86,8 @@
     },
     {
       "name": "test/showcase.test.mjs",
-      "bytes": 3218,
-      "sha256": "49F439D75E981B1D59C1FC90A37573D5A1CFAD51A272532075711482FB408CF0"
+      "bytes": 3589,
+      "sha256": "F80B2B18D31A4907687B38BBE1AD6DD5CA0956F9F069652692AE0697546727FD"
     }
   ]
 }
