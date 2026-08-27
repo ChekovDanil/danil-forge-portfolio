@@ -1,0 +1,118 @@
+{
+  "generatedAt": "2026-08-27",
+  "title": "Personal product portfolio",
+  "status": "source-ready-owner-input-required",
+  "selectedCases": 8,
+  "directions": [
+    "web-products",
+    "automation",
+    "interfaces",
+    "unity"
+  ],
+  "verifiedViewports": [
+    390,
+    1440
+  ],
+  "ownerInputRequired": [
+    "public-name",
+    "public-contact",
+    "external-case-urls"
+  ],
+  "files": [
+    {
+      "name": "README.md",
+      "bytes": 1746,
+      "sha256": "2507506E05A158AD4896572B434F0EA1A4303F49B5A51099EA64A2F26BE29477"
+    },
+    {
+      "name": "package.json",
+      "bytes": 138,
+      "sha256": "9613D6E95A0E96906B009A4064F50B5C06F7D2CA83B49457954E5CE04261C1D9"
+    },
+    {
+      "name": "public/assets/booking-desk.png",
+      "bytes": 1170689,
+      "sha256": "D514B1639E1E88BF8B98D14815B7A5B9DD2C022E9F00DA136434F1BC411ACFF5"
+    },
+    {
+      "name": "public/assets/clientspace-cover.png",
+      "bytes": 2058033,
+      "sha256": "2A2D493C698F511BE829BC5DD8C62F4F5974A221ABEDFF0EC36590D6498C7C1A"
+    },
+    {
+      "name": "public/assets/clientspace-desktop.png",
+      "bytes": 67184,
+      "sha256": "3B37629B2BEB3AE25A20AD555FF1983EE80989431405BDB843F8F181FE86B9E3"
+    },
+    {
+      "name": "public/assets/clientspace-mobile.png",
+      "bytes": 53420,
+      "sha256": "28CF357C88B93167F62BDD610CD3180060D5FE2645AD2804EB0502E074F24E64"
+    },
+    {
+      "name": "public/assets/fielddesk.png",
+      "bytes": 781572,
+      "sha256": "C2565DE1A57699F81E7D06B719CB65222F6B02847DDC8F9AB828FF01E1B9B2F2"
+    },
+    {
+      "name": "public/assets/locus-hero.png",
+      "bytes": 675689,
+      "sha256": "812F109FBC18E31CD4623AC8D3B5CD0B5E9D2CA932F5B2330EE03011E6253F7A"
+    },
+    {
+      "name": "public/assets/relay.jpg",
+      "bytes": 84260,
+      "sha256": "3DA419F806F5537BB844A1A2F4A8A70479684C25693C547B09D5B5913231D3C5"
+    },
+    {
+      "name": "public/assets/release-dock.jpg",
+      "bytes": 59597,
+      "sha256": "40668322D6D80C71783E4D9E32363F8EEA8E915786ECAD50B69F789B936C6886"
+    },
+    {
+      "name": "public/assets/reportkit.jpg",
+      "bytes": 58899,
+      "sha256": "A1075D9C3DD7EDF41998748CA2B3E2D8DA0FA32D68B541DC2899E6B9C4276849"
+    },
+    {
+      "name": "public/assets/reportkit.png",
+      "bytes": 2409117,
+      "sha256": "F87FE0A937662549822C48EBAD219C6FAB720C1E824B1EF1E36C090EE6B24536"
+    },
+    {
+      "name": "public/assets/social-preview.png",
+      "bytes": 287497,
+      "sha256": "E27BDC39B435CE0E6BC204CC8EADFEA37BC21BF5A4C9F1C629546A7FBB0D332C"
+    },
+    {
+      "name": "public/assets/stockroom.jpg",
+      "bytes": 63528,
+      "sha256": "1524A3A0117510E7411A854585966D2F67E74BD3E0F95E71B24621B6DA47A081"
+    },
+    {
+      "name": "public/assets/versta.png",
+      "bytes": 128456,
+      "sha256": "6531CE93F3F82CA8503F64681269C193423FFD72E9CD0C445E43ABA7DFA431CE"
+    },
+    {
+      "name": "public/index.html",
+      "bytes": 9432,
+      "sha256": "90FB555F372DA13BF4E21F896C2716451DEE7FE5F92910D526B9F772665BCD7D"
+    },
+    {
+      "name": "public/style.css",
+      "bytes": 8052,
+      "sha256": "363F9147590C5A5C981FDA28110935E2C459C4AA3DBF4CD7F890813E5C9BB7C7"
+    },
+    {
+      "name": "server.mjs",
+      "bytes": 1837,
+      "sha256": "1481B577805C0DD5F3D2651E2453D168C9FA9B936F8CD6CB6D28669A935127EB"
+    },
+    {
+      "name": "test/showcase.test.mjs",
+      "bytes": 3218,
+      "sha256": "49F439D75E981B1D59C1FC90A37573D5A1CFAD51A272532075711482FB408CF0"
+    }
+  ]
+}
