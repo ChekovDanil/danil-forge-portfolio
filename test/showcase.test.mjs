@@ -5,7 +5,7 @@ import { after, before, test } from 'node:test';
 
 const root = new URL('../', import.meta.url);
 const html = await readFile(new URL('public/index.html', root), 'utf8');
-const port = 3907;
+const port = 3909;
 let server;
 
 before(async () => {
@@ -14,57 +14,64 @@ before(async () => {
     env: { ...process.env, PORT: String(port) },
     stdio: 'ignore',
   });
-  for (let attempt = 0; attempt < 30; attempt += 1) {
+  for (let attempt = 0; attempt < 40; attempt += 1) {
     try {
       const response = await fetch(`http://127.0.0.1:${port}/`);
       if (response.ok) return;
     } catch {}
     await new Promise((resolve) => setTimeout(resolve, 50));
   }
-  throw new Error('Showcase server did not start');
+  throw new Error('Portfolio server did not start');
 });
 
 after(() => server?.kill());
 
-test('показывает восемь отобранных проектов', () => {
-  const names = ['LOCUS', 'Верста', 'FieldDesk', 'ReportKit', 'Stockroom', 'Relay', 'Booking Desk', 'Release Dock'];
-  for (const name of names) assert.match(html, new RegExp(`>${name.replace(' ', '\\s')}<`));
+test('главная подборка содержит шесть сильных работ', () => {
+  for (const name of ['Верста', 'FieldDesk', 'Booking Desk', 'Leadline', 'Groundlog', 'Batch Studio']) {
+    assert.match(html, new RegExp(`>${name}<`));
+  }
+  assert.match(html, /01\s*\/\s*06/);
 });
 
-test('все локальные изображения существуют и имеют alt', async () => {
-  const images = [...html.matchAll(/<img src="([^\"]+)" alt="([^\"]+)"/g)];
-  assert.equal(images.length, 8);
+test('главные изображения существуют и описаны', async () => {
+  const images = [...html.matchAll(/<img src="([^"]+)" alt="([^"]+)"/g)];
+  assert.equal(images.length, 9);
   for (const [, source, alt] of images) {
     assert.ok(alt.trim().length > 12);
-    await access(new URL(`public${source.replace('/public', '')}`, root));
+    await access(new URL(`public/${source.replace(/^\.\//, '')}`, root));
   }
 });
 
-test('у каждого проекта есть доступная текстовая ссылка', () => {
-  const caseLinks = [...html.matchAll(/<a class="(?:project-link|card-link)"[^>]*>Открыть кейс/g)];
-  assert.equal(caseLinks.length, 8);
+test('кейсы и рабочие демо упакованы рядом с витриной', async () => {
+  const paths = [
+    'cases/versta/index.html',
+    'cases/fielddesk/index.html',
+    'cases/booking-desk/index.html',
+    'demos/leadline/index.html',
+    'cases/groundlog/index.html',
+    'cases/batch-studio/index.html',
+  ];
+  for (const path of paths) await access(new URL(`public/${path}`, root));
 });
 
-test('главная страница и стили доступны, запись запрещена', async () => {
-  const page = await fetch(`http://127.0.0.1:${port}/`);
-  const css = await fetch(`http://127.0.0.1:${port}/public/style.css`);
+test('в публикации нет локальных URL и закрытого проекта', async () => {
+  const manifest = await readFile(new URL('public/publication-manifest.json', root), 'utf8');
+  assert.doesNotMatch(html, /https?:\/\/(?:localhost|127\.0\.0\.1)/i);
+  assert.doesNotMatch(`${html}\n${manifest}`, /locus|nrav|нрав|нраф/i);
+  assert.match(html, /демонстрационные проекты не выданы за клиентские/i);
+});
+
+test('сервер отдаёт главную, стили и вложенные страницы', async () => {
+  for (const path of ['/', '/style.css', '/cases/versta/index.html', '/demos/leadline/index.html']) {
+    const response = await fetch(`http://127.0.0.1:${port}${path}`);
+    assert.equal(response.status, 200, path);
+  }
   const post = await fetch(`http://127.0.0.1:${port}/`, { method: 'POST' });
-  assert.equal(page.status, 200);
-  assert.match(await page.text(), /Цифровые продукты/);
-  assert.equal(css.status, 200);
   assert.equal(post.status, 405);
 });
 
-test('страница не раскрывает закрытое название и не выдаёт демо за клиента', () => {
-  assert.doesNotMatch(html, /НРАВ|Нраф|реальный клиент|увеличили продажи/i);
-  assert.match(html, /конфиденциальный продукт/i);
-  assert.match(html, /демонстрационные проекты не выданы за клиентские/i);
-  assert.match(html, /симулятор Telegram-заявки/i);
-  assert.match(html, /локальная проверка контейнера/i);
-});
-
-test('подготовлены social preview и базовые метаданные', async () => {
+test('подготовлены метаданные и social preview', async () => {
   assert.match(html, /property="og:title"/);
-  assert.match(html, /property="og:image" content="\/public\/assets\/social-preview\.png"/);
+  assert.match(html, /property="og:image" content="\.\/assets\/social-preview\.png"/);
   await access(new URL('public/assets/social-preview.png', root));
 });

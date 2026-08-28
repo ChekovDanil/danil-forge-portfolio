@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Signal Bot — мониторинг без шума</title>
+  <meta name="description" content="Локальная демонстрация мониторинга: группировка сбоев, тихие часы, подтверждение и автоматическое восстановление.">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <a class="skip-link" href="#monitoring">К рабочему мониторингу</a>
+  <header class="topbar">
+    <a href="#top" class="brand" aria-label="Signal Bot, наверх"><span aria-hidden="true">SB</span><b>Signal Bot</b></a>
+    <p>LOCAL MONITORING / INCIDENT ROUTER</p>
+    <div class="system-state"><i aria-hidden="true"></i><span>Сценарий активен</span><b>3 probes</b></div>
+  </header>
+
+  <main id="top">
+    <section class="intro">
+      <div class="intro-copy">
+        <p class="eyebrow">SIGNAL ROUTING · HUMAN ATTENTION</p>
+        <h1>Шум остаётся<br>в ленте. <em>Сигнал<br>доходит до человека.</em></h1>
+      </div>
+      <div class="intro-note">
+        <p>Локальный движок объединяет повторные ошибки, соблюдает тихие часы и переводит критический сбой в одно понятное действие.</p>
+        <a href="#monitoring">Открыть пульт <span aria-hidden="true">↓</span></a>
+      </div>
+      <dl class="intro-metrics">
+        <div><dt>Каналы</dt><dd>immediate / digest</dd></div>
+        <div><dt>Группировка</dt><dd>1 incident / service</dd></div>
+        <div><dt>Граница</dt><dd>без Bot API</dd></div>
+      </dl>
+      <div class="signal-tape" aria-label="Три режима маршрутизации сигнала">
+        <div class="tape-label"><span>LIVE TAPE</span><b>23:24 UTC</b></div>
+        <div class="tape-lane normal"><span>01 / NORMAL</span><i></i><b>118 ms</b></div>
+        <div class="tape-lane quiet"><span>02 / QUIET</span><i></i><b>DIGEST</b></div>
+        <div class="tape-lane critical"><span>03 / CRITICAL</span><i></i><b>NOW</b></div>
+      </div>
+    </section>
+
+    <section class="workspace" id="monitoring" aria-label="Пульт мониторинга">
+      <header class="workspace-head">
+        <div><span>INCIDENT DESK</span><b>Локальная репетиция доставки</b></div>
+        <p>Проверки → группировка → решение → сообщение</p>
+        <span class="workspace-clock">UTC / REHEARSAL</span>
+      </header>
+
+      <aside class="services-panel">
+        <div class="panel-head"><span>Сервисы</span><b id="service-count">03</b></div>
+        <div id="services"></div>
+        <p class="boundary"><b>Честная граница</b>Telegram‑доставка не подключена. Команды, сообщения и переходы выполняются только внутри локального процесса.</p>
+      </aside>
+
+      <section class="incident-panel">
+        <header>
+          <div><p class="eyebrow">РАБОЧИЙ СЦЕНАРИЙ</p><h2>Лента решений</h2></div>
+          <div class="scenario-tabs" role="group" aria-label="Сценарий">
+            <button type="button" data-scenario="normal">Норма</button>
+            <button type="button" data-scenario="quiet">Тихие часы</button>
+            <button type="button" data-scenario="critical" class="active">Сбой API</button>
+          </div>
+        </header>
+        <div class="summary-line"><span>Сейчас</span><p id="summary" class="summary" role="status"></p></div>
+        <div class="incident-scale" aria-hidden="true"><span>DETECT</span><i></i><span>GROUP</span><i></i><span>ACK</span><i></i><span>RESOLVE</span></div>
+        <div id="incidents" class="incidents" aria-live="polite"></div>
+      </section>
+
+      <aside class="message-panel">
+        <div class="panel-head"><span>Delivery spool</span><b>LOCAL PREVIEW</b></div>
+        <div class="phone">
+          <div class="phone-head"><span><i aria-hidden="true"></i> Signal Bot</span><small>исходящие сообщения</small></div>
+          <div id="messages" class="messages"></div>
+        </div>
+        <div class="message-rule"><b>Маршрут внимания</b><p>Critical проходит сразу. Warning ночью ждёт утреннюю сводку. Повторная проверка остаётся внутри того же инцидента.</p></div>
+      </aside>
+    </section>
+
+    <section class="proof">
+      <header><p class="eyebrow">WORKING LOGIC / NO THEATRE</p><h2>Четыре правила.<br>Один спокойный канал.</h2></header>
+      <div>
+        <article><b>01</b><span>GROUP</span><h3>Повтор — не новый пожар.</h3><p>Проверки накапливаются в одном активном инциденте сервиса.</p></article>
+        <article><b>02</b><span>QUIET</span><h3>Ночью важна тяжесть.</h3><p>Warning ждёт digest. Critical обходит тихие часы.</p></article>
+        <article><b>03</b><span>ACK</span><h3>У сигнала появляется владелец.</h3><p>Подтверждение сохраняет ответственного и время принятия.</p></article>
+        <article><b>04</b><span>RESOLVE</span><h3>Healthy закрывает цикл.</h3><p>Восстановление автоматически завершает активный инцидент.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer><b>Signal Bot</b><span>Monitoring · Grouping · Quiet hours · Auto-resolve</span><a href="#top">Наверх <span aria-hidden="true">↑</span></a></footer>
+  <script src="./app.js" type="module"></script>
+</body>
+</html>

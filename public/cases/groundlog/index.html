@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Groundlog — offline-first полевой журнал без потери версий. Product case Danil Forge.">
+  <link rel="stylesheet" href="./style.css">
+  <title>Groundlog — offline-first field journal</title>
+</head>
+<body>
+  <a class="skip" href="#story">К кейсу</a>
+  <header>
+    <a href="#top" class="logo"><span class="logo-mark" aria-hidden="true">＋</span><strong>Groundlog</strong><small>CASE / 07</small></a>
+    <p class="header-meta">Offline-first PWA · Product design & engineering</p>
+    <a class="live-link" href="../../demos/groundlog/index.html">Открыть продукт <span>↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="story">
+      <div class="topography" aria-hidden="true"><i></i><i></i><i></i><i></i><span></span></div>
+      <div class="hero-index"><span>55.753° N</span><span>37.621° E</span><span>FIELD SYSTEM / 2026</span></div>
+      <div class="hero-copy">
+        <p class="kicker">Связь может пропасть. Запись — нет.</p>
+        <h1>Журнал<br>с памятью<br><em>о каждой версии.</em></h1>
+        <p class="lead">Полевой специалист работает без сети. Groundlog сохраняет всё на устройстве, а после подключения сверяет изменения с офисом — без тихих перезаписей.</p>
+      </div>
+      <div class="hero-aside">
+        <div class="metric"><strong>22</strong><span>автотеста<br>sync lifecycle</span></div>
+        <div class="metric"><strong>0</strong><span>скрытых<br>перезаписей</span></div>
+        <div class="metric"><strong>01</strong><span>честный<br>источник правды</span></div>
+      </div>
+      <figure class="hero-frame"><div class="frame-label"><span>WORK SURFACE / DESKTOP</span><span>1440 × 960</span></div><img src="./media/desktop.jpg" alt="Рабочий экран Groundlog с полевым маршрутом и записью"><figcaption><span>01</span> Полный контекст смены, локального состояния и следующего действия</figcaption></figure>
+    </section>
+
+    <section class="problem" id="problem">
+      <div class="section-rail"><span>01</span><p>Контекст</p></div>
+      <div class="problem-title"><p class="kicker dark">Полевые данные не ждут Wi‑Fi</p><h2>Обычная форма<br>ломается именно<br><em>там, где нужна.</em></h2></div>
+      <div class="problem-copy"><p>На объекте сеть появляется рывками. Повторная отправка создаёт дубли, а параллельная офисная правка может незаметно стереть наблюдение специалиста.</p><blockquote>Главное правило продукта: локальная работа всегда доступна, а конфликт никогда не решается за человека.</blockquote></div>
+    </section>
+
+    <section class="system" id="system">
+      <div class="system-head"><div><p class="kicker">Архитектура доверия</p><h2>Сначала сохранить.<br><em>Потом договориться.</em></h2></div><p>Интерфейс показывает реальное состояние данных: где лежит копия, сколько операций ждёт отправки и почему нужна ручная сверка.</p></div>
+      <div class="sync-map" aria-label="Схема синхронизации Groundlog">
+        <article><span class="map-no">01</span><div class="map-icon">▦</div><h3>IndexedDB</h3><p>Рабочая копия и outbox живут на устройстве. Поле отвечает мгновенно.</p><small>LOCAL SOURCE</small></article>
+        <div class="connector"><span></span><b>stable mutation ID</b></div>
+        <article><span class="map-no">02</span><div class="map-icon">⇧</div><h3>Outbox</h3><p>Повторные правки складываются в одну операцию со стабильным ID.</p><small>QUEUED CHANGE</small></article>
+        <div class="connector"><span></span><b>base revision</b></div>
+        <article><span class="map-no">03</span><div class="map-icon">⌁</div><h3>Revision check</h3><p>Сервер принимает совпавшую версию или возвращает обе копии.</p><small>EXPLICIT RESULT</small></article>
+      </div>
+      <div class="truth-strip"><span>Offline edit</span><i>→</i><span>Local save</span><i>→</i><span>Queued mutation</span><i>→</i><span>Version check</span></div>
+    </section>
+
+    <section class="evidence" id="evidence">
+      <div class="evidence-copy"><div class="section-rail light"><span>03</span><p>Конфликт</p></div><p class="kicker">Обе версии остаются видимыми</p><h2>Ничего<br>не спрятано<br><em>между строк.</em></h2><p>Инспектор изменил запись без сети. В это время офис обновил тот же осмотр. При подключении Groundlog не выбирает «последнюю» правку — показывает локальный и офисный тексты рядом.</p><ul><li><span>01</span>локальная запись остаётся доступной;</li><li><span>02</span>офисная версия не перетирается;</li><li><span>03</span>объединение становится новой ревизией.</li></ul></div>
+      <figure class="conflict-frame"><div class="frame-label"><span>CONFLICT RESOLUTION</span><span>LOCAL ↔ REMOTE</span></div><img src="./media/conflict.jpg" alt="Groundlog показывает локальную и офисную версии записи"><figcaption><span>02</span> Решение конфликта — отдельное проверяемое действие</figcaption></figure>
+    </section>
+
+    <section class="mobile">
+      <div class="mobile-stage"><div class="orbit" aria-hidden="true"><span>OFFLINE</span><span>OUTBOX 01</span><span>SYNC READY</span></div><figure><img src="./media/mobile.jpg" alt="Groundlog на мобильном экране шириной 390 пикселей"></figure></div>
+      <div class="mobile-copy"><p class="kicker dark">Интерфейс в поле</p><h2>Один экран.<br><em>Один маршрут.</em></h2><p>На телефоне журнал становится последовательным рабочим листом: выбор точки, наблюдение, статус сохранения и синхронизация в зоне большого пальца.</p><div class="mobile-spec"><div><strong>390 px</strong><span>проверенная ширина</span></div><div><strong>44 px</strong><span>минимальная цель</span></div><div><strong>0 px</strong><span>горизонтальный скролл</span></div></div></div>
+    </section>
+
+    <section class="result">
+      <div class="result-grid" aria-hidden="true"></div>
+      <p class="kicker">Итог / честная граница продукта</p>
+      <h2>Не обещание.<br><em>Рабочий сценарий.</em></h2>
+      <div class="result-copy"><p>Service Worker кэширует оболочку, но не маскирует сетевые операции. IndexedDB хранит локальное состояние. Сервер использует ревизии и идемпотентные операции.</p><p>Демо честно ограничено одной командой и локальным сервером: без заявлений об авторизации, шифровании и гарантированном background sync, которых здесь нет.</p></div>
+      <a class="result-link" href="../../demos/groundlog/index.html"><span>Открыть живой Groundlog</span><b>↗</b></a>
+      <div class="credits"><span>Product strategy</span><span>UX / UI</span><span>PWA</span><span>Sync architecture</span><span>2026</span></div>
+    </section>
+  </main>
+  <footer><a href="#top">GROUNDLOG / TOP ↑</a><span>Danil Forge · Product case</span><span>55.753° N · 37.621° E</span></footer>
+</body>
+</html>

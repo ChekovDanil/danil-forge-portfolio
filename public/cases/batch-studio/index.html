@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Batch Studio — кейс локальной очереди реальной пакетной подготовки изображений.">
+  <title>Batch Studio — Product Case</title>
+  <link rel="preload" as="image" href="./media/completed.jpg">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <a class="skip-link" href="#story">К истории проекта</a>
+  <header class="topbar">
+    <a href="#top" class="wordmark">Batch Studio</a>
+    <nav aria-label="Разделы кейса"><a href="#process">Процесс</a><a href="#proof">Результат</a><a href="#boundary">Граница</a></nav>
+    <span>CASE 03 / 2026</span>
+  </header>
+  <main id="top">
+    <section class="hero" id="story">
+      <div class="hero-index" aria-hidden="true"><span>RUN</span><b>08</b><i>LOCAL / VERIFIED</i></div>
+      <div class="hero-copy">
+        <span class="eyebrow">LOCAL IMAGE PRODUCTION</span>
+        <h1>7 исходников.<br><em>21 проверенный выход.</em></h1>
+        <p>Очередь готовит изображения для сайта, не теряя проблемные файлы и не меняя оригиналы.</p>
+        <a class="text-link" href="#process">Разобрать рабочий цикл <span aria-hidden="true">↘</span></a>
+        <dl>
+          <div><dt>Роль</dt><dd>Product · Backend · UX</dd></div>
+          <div><dt>Стек</dt><dd>Node.js · Sharp · ZIP</dd></div>
+          <div><dt>Проверка</dt><dd>16 tests · real output</dd></div>
+        </dl>
+      </div>
+      <figure class="hero-frame">
+        <img src="./media/completed.jpg" alt="Batch Studio — готовый пакет и proof sheet" width="1425" height="990" fetchpriority="high">
+        <figcaption><span>FINAL RUN</span><b>21 / 21 verified</b></figcaption>
+      </figure>
+      <div class="frame-ledger" aria-label="Состояния демонстрационного запуска">
+        <span class="active"><i>01</i><b>QUEUE</b></span><span><i>02</i><b>RUN</b></span><span class="warn"><i>03</i><b>ISSUE</b></span><span><i>04</i><b>RETRY</b></span><span class="pass"><i>05</i><b>PASS</b></span>
+      </div>
+    </section>
+
+    <section class="manifest">
+      <span>INPUT</span><b>JPEG · PNG · WebP</b>
+      <span>RECIPE</span><b>Web delivery / v1</b>
+      <span>OUTPUT</span><b>WebP · 1600 / 960 / 480</b>
+      <span>PROOF</span><b>Dimensions · SHA-256 · ZIP</b>
+    </section>
+
+    <section class="process" id="process">
+      <header>
+        <span class="eyebrow">01 / BACKGROUND QUEUE</span>
+        <h2>Вкладку можно закрыть.<br>Очередь продолжит работу.</h2>
+        <p>Локальный worker берёт изображения по одному. Пауза останавливает новый файл, а уже начатая атомарная операция завершается.</p>
+      </header>
+      <figure class="wide-shot"><img src="./media/running.jpg" loading="lazy" decoding="async" width="1425" height="990" alt="Batch Studio — фоновая очередь во время обработки"><figcaption><b>2 / 7</b><span>worker active</span></figcaption></figure>
+    </section>
+
+    <section class="exception">
+      <div class="exception-copy">
+        <span class="eyebrow">02 / RECOVERABLE ISSUE</span>
+        <h2>Один плохой файл<br>не портит пакет.</h2>
+        <p>Сигнатура не совпала с PNG. Шесть исходников уже готовы, а проблемный остаётся отдельным решением: заменить и повторить или исключить.</p>
+        <ol><li><b>18</b><span>выходов уже сохранено</span></li><li><b>1</b><span>файл требует решения</span></li><li><b>0</b><span>готовых результатов потеряно</span></li></ol>
+      </div>
+      <figure><img src="./media/attention.jpg" loading="lazy" decoding="async" width="1425" height="990" alt="Batch Studio — повреждённый файл и варианты решения"></figure>
+    </section>
+
+    <section class="proof-section" id="proof">
+      <header>
+        <span class="eyebrow">03 / VERIFIED OUTPUT</span>
+        <h2>Готово — значит<br>можно проверить.</h2>
+        <p>Каждый WebP повторно читается. Manifest связывает исходник, recipe, размеры, байты и SHA-256. ZIP собирается только из подтверждённых outputs.</p>
+      </header>
+      <div class="proof-numbers">
+        <article><span>OUTPUTS</span><b>21</b><p>три размера на исходник</p></article>
+        <article><span>ZIP ENTRIES</span><b>22</b><p>21 файл + manifest</p></article>
+        <article><span>RETRY</span><b>1</b><p>только повреждённый item</p></article>
+        <article><span>FINAL STATE</span><b>PASS</b><p>manifest совпал с ZIP</p></article>
+      </div>
+    </section>
+
+    <section class="mobile">
+      <figure><img src="./media/mobile.jpg" loading="lazy" decoding="async" width="375" height="2943" alt="Batch Studio на мобильном устройстве"></figure>
+      <div>
+        <span class="eyebrow">04 / MOBILE CONTROL</span>
+        <h2>Проверить очередь<br>можно с телефона.</h2>
+        <p>На мобильном сначала видны пакет и проблема. Proof sheet открывается ниже, а ключевые команды остаются в нижней панели.</p>
+        <ul><li>нет горизонтального скролла страницы;</li><li>ошибка и решение читаются без раскрытия;</li><li>результат, manifest и ZIP доступны отдельно.</li></ul>
+      </div>
+    </section>
+
+    <section class="boundary" id="boundary">
+      <span class="eyebrow">HONEST BOUNDARY</span>
+      <h2>Локальный продукт.<br>Без выдуманного облака.</h2>
+      <p>Сервис работает на одном компьютере и хранит очередь в памяти. Для production нужны постоянная БД, изолированные job-папки и восстановление после рестарта. RAW, PSD, видео, AI-upscale и ручная ретушь не заявляются.</p>
+      <div><b>16</b><span>автоматических тестов</span><b>390 px</b><span>мобильная проверка</span><b>0</b><span>уязвимостей npm audit</span></div>
+    </section>
+  </main>
+  <footer><b>Batch Studio</b><span>Node.js · Sharp · fflate</span><a href="#top">Наверх <span aria-hidden="true">↑</span></a></footer>
+</body>
+</html>

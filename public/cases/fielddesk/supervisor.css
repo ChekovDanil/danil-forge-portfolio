@@ -1,0 +1,5 @@
+/* Final presentation pass: remove 7–10 px service text from the case layer. */
+.topbar nav,.topbar>p,.eyebrow,.facts dt,.signals article>span,.steps li>span,
+.mobile-notes b,.phone figcaption,.result-line span,footer>span{font-size:11px}
+
+@media(max-width:620px){.topbar>p,.facts dd{font-size:11px}}

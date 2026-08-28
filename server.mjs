@@ -1,9 +1,9 @@
 import { createReadStream, existsSync, statSync } from 'node:fs';
 import { createServer } from 'node:http';
-import { extname, join, normalize } from 'node:path';
+import { extname, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const root = fileURLToPath(new URL('.', import.meta.url));
+const root = fileURLToPath(new URL('./public/', import.meta.url));
 const port = Number(process.env.PORT ?? 3070);
 const types = {
   '.css': 'text/css; charset=utf-8',
@@ -15,7 +15,7 @@ const types = {
   '.webp': 'image/webp',
 };
 const headers = {
-  'Content-Security-Policy': "default-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; frame-ancestors 'none'",
+  'Content-Security-Policy': "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'",
   'Referrer-Policy': 'no-referrer',
   'X-Content-Type-Options': 'nosniff',
 };
@@ -29,12 +29,13 @@ createServer((request, response) => {
 
   try {
     const url = new URL(request.url ?? '/', 'http://localhost');
-    const relative = url.pathname === '/'
-      ? 'public/index.html'
+    const requested = url.pathname === '/'
+      ? 'index.html'
       : decodeURIComponent(url.pathname).replace(/^[/\\]+/, '');
-    const file = normalize(join(root, relative));
+    const file = resolve(root, requested);
+    const pathFromRoot = relative(root, file);
 
-    if (!file.startsWith(root) || !existsSync(file) || !statSync(file).isFile()) {
+    if (pathFromRoot.startsWith('..') || pathFromRoot === '' || !existsSync(file) || !statSync(file).isFile()) {
       response.writeHead(404, headers);
       response.end('Not found');
       return;

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Release Dock — проверенный локальный Docker-выпуск, healthcheck и backup manifest.">
+  <title>Release Dock — deployment case</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./supervisor.css">
+  <link rel="stylesheet" href="./premium.css">
+</head>
+<body>
+  <header class="top">
+    <a href="#start"><span>RD</span><b>Release Dock</b></a>
+    <nav aria-label="Разделы кейса"><a href="#gates">Gates</a><a href="#backup">Backup</a><a href="#runbook">Runbook</a></nav>
+    <p>CASE 05 / 2026</p>
+  </header>
+  <main id="start">
+    <section class="hero">
+      <div class="hero-copy">
+        <small>LOCAL DEPLOYMENT PROOF</small>
+        <h1>Готово —<br>это когда<br><em>есть доказательства.</em></h1>
+        <p>Контейнер, health endpoint и резервная копия связываются в один воспроизводимый отчёт.</p>
+        <a class="demo-link" href="../../demos/release-dock/index.html">Открыть рабочий продукт <span>↗</span></a>
+        <dl><div><dt>Роль</dt><dd>DevOps · Backend · UX</dd></div><div><dt>Runtime</dt><dd>Docker · Node.js</dd></div><div><dt>Проверка</dt><dd>13 tests · healthy</dd></div></dl>
+      </div>
+      <figure class="hero-proof">
+        <div class="integrity-orbit" aria-hidden="true"><span></span><span></span><i></i><b>8/8</b><small>GATES</small></div>
+        <img src="./media/proof-premium.png" alt="Release Dock — проверенный отчёт выпуска">
+        <figcaption><b>LOCAL PROOF</b><span>container gates passed</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="trace-band" aria-label="Доказательный маршрут">
+      <span>BUILD</span><i></i><span>HEALTH</span><i></i><span>BACKUP</span><i></i><span>VERIFY</span>
+    </section>
+
+    <section class="thesis">
+      <small>01 · ПОДХОД</small>
+      <div><h2>Не обещать<br>«готово».<br><em>Показать факты.</em></h2><p>Вместо декоративного DevOps dashboard — Dockerfile, compose.yaml, живой health endpoint и SHA-256 manifest последней копии.</p></div>
+      <ol><li><span>01</span>Конфигурация читается</li><li><span>02</span>Runtime отвечает</li><li><span>03</span>Копия совпадает</li></ol>
+    </section>
+
+    <section class="gates" id="gates">
+      <header><small>02 · CONTAINER GATES</small><h2>Восемь условий<br>до запуска.</h2><p>Непривилегированный пользователь, read-only root, отключённые capabilities, local bind, healthcheck, volume и явная restart policy.</p></header>
+      <figure><img src="./media/proof-premium.png" alt="Восемь проверенных container gates"><figcaption>Реальный кадр локальной проверки</figcaption></figure>
+      <div class="gate-grid"><article><span>01</span><b>Least privilege</b><p>USER node · cap_drop ALL · no-new-privileges</p></article><article><span>02</span><b>Controlled surface</b><p>127.0.0.1 bind · read-only root · tmpfs</p></article><article><span>03</span><b>Observable runtime</b><p>Container healthcheck и HTTP 200 contract</p></article><article><span>04</span><b>External state</b><p>Writable data вынесены из immutable image</p></article></div>
+    </section>
+
+    <section class="backup" id="backup">
+      <header><small>03 · BACKUP PROOF</small><h2>Копия готова<br>после чтения.</h2><p>Скрипт сохраняет state.json, перечитывает результат и сравнивает bytes и SHA-256 с manifest.</p></header>
+      <figure><img src="./media/backup-premium.png" alt="Release Dock — state volume и backup manifest"><figcaption><span>SHA-256</span><b>2658e8e0…c417067a</b></figcaption></figure>
+      <div class="backup-flow"><div><span>STATE</span><b>revision 2</b></div><i>→</i><div><span>COPY</span><b>113 bytes</b></div><i>→</i><div><span>VERIFY</span><b>hash match</b></div></div>
+    </section>
+
+    <section class="runbook" id="runbook">
+      <header><small>04 · RELEASE REHEARSAL</small><h2>Маршрут нельзя<br>перепрыгнуть.</h2><p>Интерактивный state machine показывает последовательность и rollback, но честно не запускает Docker из браузера.</p></header>
+      <figure><img src="./media/runbook-premium.png" alt="Release Dock — интерактивный runbook"><figcaption><b>Build → Health → Promote → Rollback</b></figcaption></figure>
+    </section>
+
+    <section class="proof-boundary">
+      <small>05 · PROOF & BOUNDARY</small><h2>Локальный выпуск<br>проверен полностью.</h2>
+      <div class="numbers"><article><b>8/8</b><span>container gates</span></article><article><b>200</b><span>health response</span></article><article><b>13</b><span>unit tests</span></article><article><b>64</b><span>SHA-256 symbols</span></article></div>
+      <div class="boundary"><h3>Подтверждено</h3><p>Docker build, healthy container, hardened local runtime, writable volume, точная backup copy и последовательный runbook.</p><h3>Отдельный этап</h3><p>Registry, CI/CD provider, remote host, DNS, TLS, ingress, secret store, zero-downtime и production restore.</p></div>
+    </section>
+  </main>
+  <footer><b>Release Dock</b><span>Docker · Health · Backup · Rollback</span><a href="#start">Наверх ↑</a></footer>
+</body>
+</html>

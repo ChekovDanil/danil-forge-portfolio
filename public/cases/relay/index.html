@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Relay — Telegram intake case</title>
+  <meta name="description" content="Кейс веб-симулятора Telegram-заявки: сбор данных, приоритет и маршрут команды.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="supervisor.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#top" class="brand"><span>R</span>Relay</a>
+    <nav aria-label="Навигация по кейсу"><a href="#flow">Сценарий</a><a href="#routing">Маршрут</a><a href="#result">Результат</a></nav>
+    <p>PRODUCT SYSTEM · CASE 04</p>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">TELEGRAM SIGNAL · ROUTING SYSTEM</p>
+        <h1>Запрос входит.<br><em>Маршрут готов.</em></h1>
+        <p class="lead">Relay превращает свободный Telegram-диалог в управляемый сигнал: категория, приоритет, владелец и SLA — до того, как заявка попадёт в работу.</p>
+        <dl>
+          <div><dt>Роль</dt><dd>Product / UX / Frontend</dd></div>
+          <div><dt>Сценарий</dt><dd>7 шагов</dd></div>
+          <div><dt>Проверка</dt><dd>12 domain tests</dd></div>
+        </dl>
+      </div>
+      <figure class="hero-window">
+        <div class="window-bar"><span></span><i>relay.local / urgent</i><b>Высокий приоритет</b></div>
+        <img src="media/relay-urgent-premium.png" alt="Relay показывает срочную заявку, карточку и маршрут">
+        <div class="hero-route" aria-hidden="true"><span>TELEGRAM</span><i></i><span>CLASSIFY</span><i></i><span>SLA 00:30</span><i></i><span>TEAM</span></div>
+      </figure>
+    </section>
+
+    <section class="case-signal" aria-label="Принцип работы Relay">
+      <p>ONE INPUT</p><div><i></i><span>Диалог</span></div><div><i></i><span>Контекст</span></div><div><i></i><span>Приоритет</span></div><div class="hot"><i></i><span>SLA</span></div><div><i></i><span>Команда</span></div><b>ONE ROUTE</b>
+    </section>
+
+    <section class="problem">
+      <p class="eyebrow">01 / ПРОБЛЕМА</p>
+      <div><h2>Сообщение есть.<br>Контекста нет.</h2><p>Свободный запрос редко содержит бюджет, срок и понятного ответственного. Команда теряет время не на работу, а на восстановление контекста и ручную пересылку.</p></div>
+      <blockquote><span>«Здравствуйте. Нужен бот. Сколько стоит?»</span><small>обычное первое сообщение</small></blockquote>
+    </section>
+
+    <section class="flow" id="flow">
+      <div class="section-head"><p class="eyebrow">02 / СЦЕНАРИЙ</p><h2>Семь шагов.<br>Один чистый сигнал.</h2></div>
+      <ol>
+        <li><span>01</span><b>Имя</b><p>Как обращаться</p></li>
+        <li><span>02</span><b>Контакт</b><p>Телефон или email</p></li>
+        <li><span>03</span><b>Категория</b><p>Что требуется</p></li>
+        <li><span>04</span><b>Задача</b><p>Суть запроса</p></li>
+        <li><span>05</span><b>Бюджет</b><p>Диапазон</p></li>
+        <li><span>06</span><b>Срок</b><p>Обычно или срочно</p></li>
+        <li><span>07</span><b>Проверка</b><p>Перед отправкой</p></li>
+      </ol>
+    </section>
+
+    <section class="comparison">
+      <article>
+        <div class="comparison-copy"><p class="eyebrow">ОБЫЧНАЯ ЗАЯВКА</p><h3>Работа по очереди.</h3><p>Запрос получает стандартный приоритет, ответственного и SLA в течение рабочего дня.</p><ul><li><b>Приоритет</b><span>Обычный</span></li><li><b>SLA</b><span>В течение дня</span></li></ul></div>
+        <figure><img src="media/relay-normal-premium.png" alt="Обычная заявка Relay со стандартным SLA"></figure>
+      </article>
+      <article class="urgent">
+        <div class="comparison-copy"><p class="eyebrow">СРОЧНАЯ ЗАЯВКА</p><h3>SLA — 30 минут.</h3><p>Срочный запрос поднимается выше; демо назначает короткий SLA и формирует маршрут уведомления.</p><ul><li><b>Приоритет</b><span>Высокий</span></li><li><b>SLA</b><span>30 минут</span></li></ul></div>
+        <figure><img src="media/relay-urgent-premium.png" alt="Срочная заявка Relay с высоким приоритетом"></figure>
+      </article>
+    </section>
+
+    <section class="routing" id="routing">
+      <div class="routing-copy"><p class="eyebrow">03 / ROUTE ENGINE</p><h2>Категория выбирает<br>не папку, а команду.</h2><p>Relay связывает тип задачи с исполнителем, рабочим каналом и измеримым временем первого ответа.</p></div>
+      <div class="route-table" role="table" aria-label="Маршрутизация заявок">
+        <div role="row"><b role="cell">Сайт</b><span role="cell">Веб-команда</span><em role="cell">Алексей</em><small role="cell">#web-leads</small></div>
+        <div role="row"><b role="cell">Telegram-бот</b><span role="cell">Автоматизация</span><em role="cell">Ирина</em><small role="cell">#automation</small></div>
+        <div role="row"><b role="cell">Автоматизация</b><span role="cell">Интеграции</span><em role="cell">Ирина</em><small role="cell">#automation</small></div>
+        <div role="row"><b role="cell">Другое</b><span role="cell">Первичная оценка</span><em role="cell">Менеджер</em><small role="cell">#new-leads</small></div>
+      </div>
+    </section>
+
+    <section class="card-story" id="result">
+      <figure><img src="media/relay-lead-premium.png" alt="Карточка заявки Relay для команды"></figure>
+      <div><p class="eyebrow">04 / РЕЗУЛЬТАТ</p><h2>Не переписка.<br>Готовая карточка.</h2><p>Движок собирает задачу, контакт, бюджет, срок, владельца и следующий шаг в одной карточке. Журнал показывает, как она появилась.</p><div class="result-tags"><span>Задача</span><span>Контакт</span><span>Бюджет</span><span>SLA</span><span>Владелец</span><span>Журнал</span></div></div>
+    </section>
+
+    <section class="mobile">
+      <div class="phone"><img src="media/relay-mobile-premium.png" alt="Relay на мобильном устройстве"></div>
+      <div class="mobile-copy"><p class="eyebrow">05 / MOBILE</p><h2>Один сценарий<br>в любом экране.</h2><p>На телефоне сначала видны выбор сценария и сам диалог. Рабочая карточка и маршрут идут ниже — без горизонтального переполнения.</p><dl><div><dt>390 px</dt><dd>проверенный мобильный экран</dd></div><div><dt>0</dt><dd>сломанных изображений</dd></div></dl></div>
+    </section>
+
+    <section class="evidence">
+      <p class="eyebrow">06 / ЧТО РЕАЛЬНО РАБОТАЕТ</p>
+      <div class="evidence-head"><h2>Логика отделена<br>от транспорта.</h2><p>Веб-симулятор честно показывает продуктовую механику. Подключение к реальному Telegram, базе и рабочим уведомлениям — отдельный интеграционный этап.</p></div>
+      <ul><li><b>12</b><span>автотестов логики</span></li><li><b>4</b><span>маршрута команды</span></li><li><b>2</b><span>уровня приоритета</span></li><li><b>1</b><span>готовая карточка</span></li></ul>
+    </section>
+  </main>
+
+  <footer><b>Relay</b><span>Telegram flow simulator · Intake · Routing · SLA</span><a href="#top">Наверх ↑</a></footer>
+</body>
+</html>

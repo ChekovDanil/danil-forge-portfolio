@@ -7,11 +7,14 @@
   <meta property="og:title" content="Danil Forge — дизайн и разработка цифровых продуктов">
   <meta property="og:description" content="Проверяемые веб-продукты, автоматизация, интерфейсы и Unity.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="/public/assets/social-preview.png">
+  <meta property="og:image" content="./assets/social-preview.png">
   <title>Danil Forge — дизайн и разработка цифровых продуктов</title>
-  <link rel="stylesheet" href="/public/style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <a class="skip" href="#work">К работам</a>
+  <div class="cursor-aura" aria-hidden="true"></div>
+  <div class="page-progress" aria-hidden="true"><i></i></div>
   <header class="site-header">
     <a class="mark" href="#top" aria-label="Danil Forge, в начало">DANIL FORGE</a>
     <nav aria-label="Основная навигация">
@@ -19,77 +22,137 @@
       <a href="#focus">Направления</a>
       <a href="#contact">Контакты</a>
     </nav>
-    <span class="availability"><i></i> Доступен для проектов</span>
   </header>
 
   <main id="top">
     <section class="hero">
-      <p class="kicker">Продуктовый дизайн · Разработка · Автоматизация · Unity</p>
-      <h1>Цифровые продукты,<br>которые можно проверить.</h1>
+      <div class="hero-webgl" aria-hidden="true"><canvas></canvas></div>
+      <div class="hero-orb orb-a" aria-hidden="true"></div><div class="hero-orb orb-b" aria-hidden="true"></div>
+      <p class="kicker" data-hero>Продуктовый дизайн · Разработка · Автоматизация · Unity</p>
+      <h1 data-hero>Цифровые продукты,<br>которые можно <em>проверить.</em></h1>
       <div class="hero-bottom">
-        <p>Проектирую и собираю рабочие интерфейсы, сервисы и механики — от понятной структуры до запуска и проверки результата.</p>
-        <a href="#work">Смотреть работы <span>↓</span></a>
+        <p data-hero>Проектирую и собираю рабочие интерфейсы, сервисы и механики — от понятной структуры до запуска и проверки результата.</p>
+        <a class="premium-button" data-magnetic href="#work"><span>Смотреть работы</span><b>↓</b></a>
       </div>
     </section>
 
-    <section class="focus" id="focus" aria-label="Направления работы">
-      <article><span>01</span><h2>Веб-продукты</h2><p>CRM, кабинеты, сервисы и приложения.</p></article>
-      <article><span>02</span><h2>Автоматизация</h2><p>Боты, интеграции, данные и утилиты.</p></article>
-      <article><span>03</span><h2>Интерфейсы</h2><p>UX/UI, системы компонентов и адаптация.</p></article>
-      <article><span>04</span><h2>Unity</h2><p>Механики, прототипы и техническая доработка.</p></article>
+    <section class="capability-map" id="focus" aria-labelledby="capability-title" data-capability>
+      <div class="capability-webgl" aria-hidden="true"><canvas></canvas></div>
+      <div class="capability-ambient" aria-hidden="true"><i></i><i></i></div>
+      <header class="capability-heading">
+        <p class="section-label">Карта возможностей</p>
+        <h2 id="capability-title">От разных задач —<br>к рабочему продукту.</h2>
+      </header>
+
+      <div class="capability-stage">
+        <div class="capability-count" aria-label="Более пятнадцати рабочих продуктов">
+          <strong data-product-count>15+</strong>
+          <span>рабочих<br>продуктов</span>
+        </div>
+
+        <div class="capability-streams" role="list" aria-label="Направления работы">
+          <div class="capability-stream" role="listitem">
+            <span>01</span><strong>Веб-продукты</strong><i class="capability-track-line" aria-hidden="true"></i>
+          </div>
+          <div class="capability-stream" role="listitem">
+            <span>02</span><strong>Автоматизация</strong><i class="capability-track-line" aria-hidden="true"></i>
+          </div>
+          <div class="capability-stream" role="listitem">
+            <span>03</span><strong>Интерфейсы</strong><i class="capability-track-line" aria-hidden="true"></i>
+          </div>
+          <div class="capability-stream" role="listitem">
+            <span>04</span><strong>Unity</strong><i class="capability-track-line" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <div class="capability-merge" aria-hidden="true"><i></i><b></b></div>
+
+        <div class="capability-devices">
+          <div class="device-diagram" aria-hidden="true">
+            <span class="desktop-shape"><i></i></span>
+            <span class="mobile-shape"><i></i></span>
+          </div>
+          <strong>Desktop ↔ Mobile</strong>
+          <span><i aria-hidden="true"></i> Проверено</span>
+        </div>
+      </div>
+
+      <div class="process-flow" aria-labelledby="process-title">
+        <div class="process-intro">
+          <p class="section-label">Рабочий процесс</p>
+          <h3 id="process-title">Пять шагов.<br>Один проверяемый результат.</h3>
+        </div>
+        <ol>
+          <li class="process-step"><span>01</span><strong>Задача</strong><small>Контекст</small></li>
+          <li class="process-step"><span>02</span><strong>Проектирование</strong><small>Схема</small></li>
+          <li class="process-step"><span>03</span><strong>Разработка</strong><small>Интерфейс и код</small></li>
+          <li class="process-step"><span>04</span><strong>Проверка</strong><small>Сценарии и тесты</small></li>
+          <li class="process-step"><span>05</span><strong>Результат</strong><small>Рабочий продукт</small></li>
+        </ol>
+      </div>
     </section>
 
     <section class="work" id="work">
-      <div class="section-title"><span>Выбранные работы</span><span>01 / 08</span></div>
-      <article class="feature-card">
-        <a class="feature-visual" href="http://127.0.0.1:3121/" aria-label="Открыть обезличенный кейс LOCUS">
-          <img src="/public/assets/locus-hero.png" alt="Интерфейс мобильной социальной карты LOCUS">
+      <div class="section-title"><span>Выбранные работы</span><span>01 / 06</span></div>
+      <div class="work-intro"><h2>Продукт виден целиком.<br>Результат — по ссылке.</h2><p>Шесть сильных кейсов показывают разные типы задач. Каждый экран можно открыть, проверить на компьютере и телефоне и пройти как рабочий сценарий.</p></div>
+      <article class="feature-card" data-reveal>
+        <a class="feature-visual phone-gallery" href="./cases/versta/index.html" aria-label="Открыть кейс Верста">
+          <span class="visual-caption">Верста · мобильное приложение</span>
+          <figure class="phone-device phone-left"><img src="./assets/versta-start.jpg" alt="Стартовый экран пассажирского приложения Верста"></figure>
+          <figure class="phone-device phone-center"><img src="./assets/versta-route.jpg" alt="Маршрут пассажирского приложения Верста"></figure>
+          <figure class="phone-device phone-right"><img src="./assets/versta-price.jpg" alt="Расчёт тарифа пассажирского приложения Верста"></figure>
+          <noscript><img src="./assets/versta.png" alt="Обзор пассажирского приложения Верста"></noscript>
         </a>
         <div class="feature-copy">
-          <div><span class="project-number">01</span><span class="project-type">Мобильный продукт · PWA</span></div>
-          <h2>LOCUS</h2>
-          <p>Социальная карта, где место связывает события, публикации и общение. Конфиденциальный продукт представлен под публичным кодовым именем.</p>
-          <ul><li>Продуктовая структура</li><li>UX/UI и адаптивность</li><li>Разработка интерфейса</li></ul>
-          <a class="project-link" href="http://127.0.0.1:3121/">Открыть кейс <span>↗</span></a>
+          <div><span class="project-number">01</span><span class="project-type">PWA · Карты · Пассажирский сервис</span></div>
+          <h2>Верста</h2>
+          <p>Пассажирский сценарий от выбора маршрута и тарифа до готового заказа. Светлая карта и расчёт собраны в один понятный поток.</p>
+          <ul><li>Продуктовая структура</li><li>UX/UI и адаптивность</li><li>Разработка PWA</li></ul>
+          <a class="project-link premium-link" href="./cases/versta/index.html"><span>Открыть кейс</span><b>↗</b></a>
         </div>
       </article>
 
       <div class="project-grid" aria-label="Другие выбранные работы">
-        <article class="project-card wide">
-          <a class="project-image" href="http://127.0.0.1:3150/"><img src="/public/assets/versta.png" alt="Светлая карта и маршрут пассажирского приложения Верста"></a>
-          <div class="project-meta"><span>02 · PWA и карты</span><span>Product / Full-stack</span></div>
-          <h3>Верста</h3><p>Пассажирский сценарий от маршрута и тарифа до готового заказа.</p><a class="card-link" href="http://127.0.0.1:3150/">Открыть кейс <span>↗</span></a>
+        <article class="project-card fit fielddesk-card" data-reveal>
+          <a class="project-image browser-device" href="./cases/fielddesk/index.html"><i aria-hidden="true"><b></b><b></b><b></b><span>FieldDesk · CRM</span></i><img src="./assets/fielddesk.png" alt="Диспетчерская выездной сервисной команды FieldDesk"></a>
+          <div class="project-meta"><span>02 · CRM</span><span>UX/UI / Frontend</span></div>
+          <h3>FieldDesk</h3><p>Приоритетная очередь заявок, исполнители, SLA и история решений.</p><a class="card-link" href="./cases/fielddesk/index.html">Открыть кейс <span>↗</span></a>
         </article>
-        <article class="project-card fit fielddesk-card">
-          <a class="project-image" href="http://127.0.0.1:3160/"><img src="/public/assets/fielddesk.png" alt="Диспетчерская выездной сервисной команды FieldDesk"></a>
-          <div class="project-meta"><span>03 · CRM</span><span>UX/UI / Frontend</span></div>
-          <h3>FieldDesk</h3><p>Приоритетная очередь заявок, исполнители, SLA и история решений.</p><a class="card-link" href="http://127.0.0.1:3160/">Открыть кейс <span>↗</span></a>
+        <article class="project-card fit booking-card" data-reveal>
+          <a class="project-image browser-device" href="./cases/booking-desk/index.html"><i aria-hidden="true"><b></b><b></b><b></b><span>Booking Desk · запись</span></i><img src="./assets/booking-desk.png" alt="Система записи Booking Desk"></a>
+          <div class="project-meta"><span>03 · Бронирование</span><span>Web app / Calendar</span></div>
+          <h3>Booking Desk</h3><p>Свободные интервалы, конфликты времени, перенос и мобильный календарь.</p><a class="card-link" href="./cases/booking-desk/index.html">Открыть кейс <span>↗</span></a>
         </article>
-        <article class="project-card">
-          <a class="project-image" href="http://127.0.0.1:3140/"><img src="/public/assets/reportkit.jpg" alt="Интерфейс подготовки и проверки данных ReportKit"></a>
-          <div class="project-meta"><span>04 · Данные</span><span>Automation / Web</span></div>
-          <h3>ReportKit</h3><p>Загрузка CSV, проверка структуры, сопоставление полей и два экспорта.</p><a class="card-link" href="http://127.0.0.1:3140/">Открыть кейс <span>↗</span></a>
+        <article class="project-card wide fit" data-reveal>
+          <a class="project-image browser-device" href="./demos/leadline/index.html"><i aria-hidden="true"><b></b><b></b><b></b><span>Leadline · CRM продаж</span></i><img src="./assets/leadline.png" alt="Рабочая воронка сделок и приоритетов Leadline"></a>
+          <div class="project-meta"><span>04 · CRM</span><span>Product / Frontend</span></div>
+          <h3>Leadline</h3><p>Воронка продаж, следующие действия, прогноз и просроченные контакты на одном экране.</p><a class="card-link" href="./demos/leadline/index.html">Открыть продукт <span>↗</span></a>
         </article>
-        <article class="project-card wide">
-          <a class="project-image" href="http://127.0.0.1:3130/"><img src="/public/assets/stockroom.jpg" alt="Административная панель каталога Stockroom"></a>
-          <div class="project-meta"><span>05 · Админ-панель</span><span>Product / Data</span></div>
-          <h3>Stockroom</h3><p>Каталог, массовое редактирование, импорт и безопасная отмена изменений.</p><a class="card-link" href="http://127.0.0.1:3130/">Открыть кейс <span>↗</span></a>
+        <article class="project-card wide fit" data-reveal>
+          <a class="project-image browser-device" href="./cases/groundlog/index.html"><i aria-hidden="true"><b></b><b></b><b></b><span>Groundlog · offline-first</span></i><img src="./assets/groundlog.png" alt="Кейс автономного полевого журнала Groundlog"></a>
+          <div class="project-meta"><span>05 · PWA</span><span>Offline / Sync</span></div>
+          <h3>Groundlog</h3><p>Полевой журнал сохраняет работу без сети и явно разрешает конфликты после синхронизации.</p><a class="card-link" href="./cases/groundlog/index.html">Открыть кейс <span>↗</span></a>
         </article>
-        <article class="project-card wide">
-          <a class="project-image" href="http://127.0.0.1:3170/"><img src="/public/assets/relay.jpg" alt="Сценарий заявки и маршрутизации Relay"></a>
-          <div class="project-meta"><span>06 · Telegram</span><span>Bot / Routing</span></div>
-          <h3>Relay</h3><p>Симулятор Telegram-заявки: проверка данных, приоритет, SLA и маршрут команды.</p><a class="card-link" href="http://127.0.0.1:3170/">Открыть кейс <span>↗</span></a>
+        <article class="project-card wide fit" data-reveal>
+          <a class="project-image browser-device" href="./cases/batch-studio/index.html"><i aria-hidden="true"><b></b><b></b><b></b><span>Batch Studio · media pipeline</span></i><img src="./assets/batch-studio.png" alt="Проверяемый конвейер обработки изображений Batch Studio"></a>
+          <div class="project-meta"><span>06 · Автоматизация</span><span>Node.js / Media</span></div>
+          <h3>Batch Studio</h3><p>Очередь обрабатывает изображения пакетно, сохраняет исходники и собирает проверяемый результат.</p><a class="card-link" href="./cases/batch-studio/index.html">Открыть кейс <span>↗</span></a>
         </article>
-        <article class="project-card fit booking-card">
-          <a class="project-image" href="http://127.0.0.1:3120/"><img src="/public/assets/booking-desk.png" alt="Система записи Booking Desk"></a>
-          <div class="project-meta"><span>07 · Бронирование</span><span>Web app / Calendar</span></div>
-          <h3>Booking Desk</h3><p>Свободные интервалы, конфликты времени, перенос и мобильный календарь.</p><a class="card-link" href="http://127.0.0.1:3120/">Открыть кейс <span>↗</span></a>
-        </article>
-        <article class="project-card">
-          <a class="project-image" href="http://127.0.0.1:3250/"><img src="/public/assets/release-dock.jpg" alt="Технический кейс выпуска приложения Release Dock"></a>
-          <div class="project-meta"><span>08 · DevOps</span><span>Docker / Release</span></div>
-          <h3>Release Dock</h3><p>Локальная проверка контейнера, healthcheck, резервной копии и выпуска.</p><a class="card-link" href="http://127.0.0.1:3250/">Открыть кейс <span>↗</span></a>
-        </article>
+      </div>
+    </section>
+
+    <section class="product-index" aria-labelledby="product-index-title">
+      <div class="index-head"><p class="section-label">Ещё готовые продукты</p><div><h2 id="product-index-title">Больше задач.<br>Та же глубина.</h2><p>Компактный индекс технических и системных работ. Здесь — без длинной презентации: название, назначение и прямой переход.</p></div></div>
+      <div class="index-list">
+        <a href="./cases/reportkit/index.html"><span>07</span><strong>ReportKit</strong><em>Данные и экспорт</em><b>↗</b></a>
+        <a href="./cases/stockroom/index.html"><span>08</span><strong>Stockroom</strong><em>Админ-панель</em><b>↗</b></a>
+        <a href="./cases/relay/index.html"><span>09</span><strong>Relay</strong><em>Telegram-сценарий</em><b>↗</b></a>
+        <a href="./cases/release-dock/index.html"><span>10</span><strong>Release Dock</strong><em>DevOps-проверка</em><b>↗</b></a>
+        <a href="./demos/operator-ui/index.html"><span>11</span><strong>Operator UI</strong><em>Дизайн-система</em><b>↗</b></a>
+        <a href="./cases/signal-bot/index.html"><span>12</span><strong>Signal Bot</strong><em>Мониторинг</em><b>↗</b></a>
+        <a href="./demos/routine/index.html"><span>13</span><strong>Routine</strong><em>Android-приложение</em><b>↗</b></a>
+        <a href="./demos/queue/index.html"><span>14</span><strong>Queue</strong><em>Очередь заказов</em><b>↗</b></a>
+        <a href="./demos/web-fixes/index.html"><span>15</span><strong>Web Fixes Lab</strong><em>Адаптивность</em><b>↗</b></a>
       </div>
     </section>
 
@@ -101,5 +164,7 @@
   </main>
 
   <footer id="contact"><span>Danil Forge · Danil</span><span>Новосибирск · удалённо</span><span>© 2026</span></footer>
+  <script src="./vendor/motion.js"></script>
+  <script type="module" src="./app.js"></script>
 </body>
 </html>
