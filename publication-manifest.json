@@ -1,0 +1,26 @@
+{
+  "generatedAt": "2026-08-28T21:23:07.286Z",
+  "pages": [
+    "cases/versta",
+    "cases/fielddesk",
+    "cases/booking-desk",
+    "cases/groundlog",
+    "cases/batch-studio",
+    "cases/reportkit",
+    "cases/stockroom",
+    "cases/relay",
+    "cases/release-dock",
+    "cases/signal-bot",
+    "demos/leadline",
+    "demos/groundlog",
+    "demos/reportkit",
+    "demos/release-dock",
+    "demos/signal-bot",
+    "demos/routine",
+    "demos/routine-launch",
+    "demos/operator-ui",
+    "demos/queue",
+    "demos/web-fixes"
+  ],
+  "files": 272
+}

@@ -1,0 +1,11 @@
+/* Final presentation pass: the mobile proof is complete and readable. */
+.topbar,.eyebrow,.hero dt,.hero dd,.window-bar,.rule small,.states span,
+.states p,.import figcaption,.import-legend span,.mobile-proof small,
+.result li span,.honesty,footer{font-size:11px}
+
+@media(max-width:620px){
+  .hero-window,.import figure{width:100%;transform:none}
+  .topbar,.eyebrow,.hero dt,.hero dd,.window-bar,.rule small,.states span,
+  .states p,.import figcaption,.import-legend span,.mobile-proof small,
+  .result li span,.honesty,footer{font-size:12px}
+}

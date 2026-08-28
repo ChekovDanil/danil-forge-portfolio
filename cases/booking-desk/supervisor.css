@@ -1,0 +1,16 @@
+/* Final presentation pass: no scaled desktop overflow on mobile. */
+.eyebrow,.section-index,.meta span,.browser-bar,.caption,.story-copy li span,
+.micro-note,.system-grid p,.system-grid span{font-size:12px}
+
+@media(max-width:920px){
+  .hero-stage{margin-inline:0}
+  .browser-frame{transform:none}
+  .desktop-detail{width:100%;margin-left:0}
+  .desktop-detail img{width:100%;max-width:100%}
+}
+
+@media(max-width:560px){
+  .hero-stage{margin:10px 0 0}
+  .caption{right:0}
+  .desktop-detail{width:100%;margin-left:0}
+}

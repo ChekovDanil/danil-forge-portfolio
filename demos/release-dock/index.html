@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Release Dock — локально проверенный Docker-выпуск, healthcheck и backup manifest.">
+  <title>Release Dock — Local Release Proof</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./premium.css">
+</head>
+<body data-release-status="planned">
+  <header class="top">
+    <a href="#start" aria-label="Release Dock — к началу страницы"><span>RD</span><b>Release Dock</b></a>
+    <p>LOCAL RELEASE PROOF</p>
+    <div class="top-state"><i aria-hidden="true"></i><span id="topState">WAITING FOR REPORT</span></div>
+  </header>
+  <main id="start">
+    <section class="hero">
+      <div class="hero-copy">
+        <small>DOCKER · HEALTH · BACKUP · ROLLBACK</small>
+        <h1>Каждый выпуск<br><em>оставляет след.</em></h1>
+        <p class="hero-lede">Не декоративный статус, а связанная цепочка фактов: конфигурация, живой endpoint и проверенная копия.</p>
+      </div>
+      <aside class="hero-note" aria-label="Параметры текущего выпуска">
+        <div class="recorder-head"><span>FLIGHT RECORDER</span><i aria-hidden="true"></i><b>LOCAL</b></div>
+        <div class="signal-trace" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        <p>Release Dock собирает локальный proof в один читаемый отчёт — без обещаний о том, чего это окружение не проверяло.</p>
+        <dl>
+          <div><dt>Среда</dt><dd id="environment">demo</dd></div>
+          <div><dt>Версия</dt><dd id="version">1.0.0</dd></div>
+          <div><dt>Revision</dt><dd id="revision">—</dd></div>
+        </dl>
+      </aside>
+    </section>
+    <section class="release-rail" aria-label="Маршрут выпуска">
+      <header><span>RELEASE TRACE</span><b>Последовательность действий</b></header>
+      <ol>
+        <li data-rail="build"><span>01</span><b>Build</b><small>image</small></li>
+        <li data-rail="health"><span>02</span><b>Health</b><small>gates</small></li>
+        <li data-rail="promote"><span>03</span><b>Promote</b><small>active</small></li>
+        <li data-rail="rollback"><span>04</span><b>Rollback</b><small>return</small></li>
+      </ol>
+    </section>
+    <section class="proof" id="proof">
+      <header>
+        <div><span id="proofCode">VERIFY</span><h2 id="proofTitle">Отчёт выпуска</h2><p id="proofNote">Запустите локальную проверку, чтобы получить фактические результаты.</p></div>
+        <div class="proof-stamp" id="proofStamp" data-ready="false"><b>—</b><span>gates passed</span></div>
+      </header>
+      <div class="proof-grid">
+        <section class="gates" aria-labelledby="gates-title"><div class="section-title"><small id="gates-title">CONTAINER GATES</small><span>Dockerfile + compose.yaml</span></div><div id="gates"></div></section>
+        <section class="evidence" aria-labelledby="evidence-title"><div class="section-title"><small id="evidence-title">VERIFIED EVIDENCE</small><span>последний отчёт</span></div><div id="evidence"></div></section>
+      </div>
+    </section>
+    <section class="runbook" id="runbook">
+      <header><div><small>RELEASE REHEARSAL</small><h2>Маршрут нельзя<br>перепрыгнуть.</h2></div><p>Runbook использует тот же state machine: build → health → promote → rollback. Браузер показывает последовательность, но не выдаёт симуляцию за реальный deploy.</p></header>
+      <div class="runbook-bar" aria-label="Действия runbook">
+        <button data-action="build"><span>01</span><b>Build</b><small>Образ подготовлен</small></button>
+        <button data-action="health"><span>02</span><b>Health</b><small>Gates пройдены</small></button>
+        <button data-action="promote"><span>03</span><b>Promote</b><small>Версия активна</small></button>
+        <button data-action="rollback"><span>04</span><b>Rollback</b><small>Возврат отмечен</small></button>
+      </div>
+      <div class="release-tape"><header><span id="releaseStatus" aria-live="polite">PLANNED</span><button data-action="reset">Сбросить runbook</button></header><div id="releaseEvents" aria-live="polite"></div></div>
+    </section>
+    <section class="state-proof" id="backup">
+      <header><div><small>STATE & BACKUP</small><h2>Данные живут<br>вне образа.</h2></div><p>Bind volume хранит изменяемое состояние. Backup script делает копию, строит manifest и перечитывает файл для проверки размера и SHA-256.</p></header>
+      <div class="state-layout"><section><div class="state-card"><span>WRITABLE VOLUME</span><b id="stateFile">state.json · revision —</b><p id="stateNote">—</p><button data-action="change-state">Изменить state</button></div></section><section class="hash-card"><span>BACKUP MANIFEST</span><b id="backupName">Backup not run</b><code id="backupHash">—</code><dl><div><dt>bytes</dt><dd id="backupBytes">—</dd></div><div><dt>verification</dt><dd id="backupVerification">—</dd></div></dl></section></div>
+    </section>
+    <section class="boundary">
+      <small>PRODUCTION BOUNDARY</small><h2>Локальный proof.<br>Без облачной легенды.</h2>
+      <div><p>Реально проверяются Docker build, hardened runtime config, health endpoint, state volume и точность backup.</p><p>Registry, CI provider, удалённый host, DNS, TLS, ingress, secret store, zero-downtime и production restore требуют отдельного окружения.</p></div>
+      <ul><li>Local Docker</li><li>No registry push</li><li>No remote host</li><li>No TLS claim</li></ul>
+    </section>
+  </main>
+  <footer><b>Release Dock</b><span>Docker · Health · Backup · Runbook</span><a href="#start">Наверх ↑</a></footer>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

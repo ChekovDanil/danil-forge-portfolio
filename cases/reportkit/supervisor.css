@@ -1,0 +1,18 @@
+/* Final presentation pass: evidence first, decoration second. */
+.topbar,.label,.hero dt,.hero dd,.screen-head,.mapping figcaption span,
+.map-list span,.review-grid span,.review-grid em,.review-note,.mobile-stat span,
+.outputs span,.outputs p,.output li span,.output>small,footer{font-size:11px}
+
+.demo-link{width:max-content;margin:-18px 0 34px;padding:13px 16px;display:flex;align-items:center;gap:28px;border:1px solid rgba(255,255,255,.2);border-radius:10px;color:#fff;font-size:12px;transition:background .2s,transform .2s}
+.demo-link:hover{background:rgba(255,255,255,.08);transform:translateY(-1px)}
+.hero-screen img,.mapping figure img{aspect-ratio:1.44/1;object-fit:cover;object-position:top}
+.phones figure img{aspect-ratio:390/844;object-fit:cover;object-position:top}
+
+@media(max-width:620px){
+  .hero-screen,.mapping figure{width:100%;transform:none}
+  .topbar,.label,.hero dt,.hero dd,.screen-head,.mapping figcaption span,
+  .map-list span,.review-grid span,.review-grid em,.review-note,.mobile-stat span,
+  .outputs span,.outputs p,.output li span,.output>small,footer,.raw-row{font-size:12px}
+  .demo-link{margin-top:-14px;margin-bottom:30px;font-size:13px}
+  .hero-screen img,.mapping figure img{aspect-ratio:1.25/1}
+}

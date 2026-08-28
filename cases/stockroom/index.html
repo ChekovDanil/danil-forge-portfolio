@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Stockroom — product case</title>
+  <meta name="description" content="Кейс административной панели каталога с дефицитом, жизненным циклом товара и обратимым импортом.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="supervisor.css">
+  <link rel="stylesheet" href="premium.css">
+</head>
+<body>
+  <a class="skip-link" href="#logic">К содержанию кейса</a>
+  <header class="topbar"><a href="#top" class="mark">S/01</a><nav><a href="#logic">Логика</a><a href="#import">Импорт</a><a href="#mobile">Мобильный</a></nav><span>PRODUCT CASE · 2026</span></header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow">INVENTORY CONTROL · ADMIN UI</p><h1>Дефицит<br><em>виден заранее.</em></h1><p class="lead">Каталог, который показывает проблему до того, как товар закончится.</p><dl><div><dt>Роль</dt><dd>Product / UX / Frontend</dd></div><div><dt>Формат</dt><dd>Adaptive web app</dd></div><div><dt>Проверка</dt><dd>8 domain tests</dd></div></dl></div>
+      <div class="hero-window"><div class="window-bar"><i></i><i></i><i></i><span>stockroom.local / catalog</span></div><img src="media/stockroom-desktop-premium.png" alt="Каталог Stockroom с финансовой сводкой и очередью дефицита"></div>
+      <div class="hero-coordinate" aria-hidden="true"><span>08 / 26</span><i></i><small>STOCK LEDGER</small></div>
+    </section>
+
+    <section class="ledger-band" aria-label="Ключевые свойства продукта">
+      <p><span>01</span>Дефицит до нуля</p><p><span>02</span>Полный lifecycle</p><p><span>03</span>Импорт до → после</p><p><span>04</span>Отмена партии</p>
+    </section>
+
+    <section class="statement" id="logic"><p class="eyebrow">01 / ЗАДАЧА</p><h2>Не ещё одна таблица.<br>Рабочая очередь.</h2><div class="statement-grid"><p>Оператору важно не пересчитывать строки, а сразу видеть, что требует действия. Поэтому дефицит вынесен выше каталога и отсортирован по величине.</p><div class="rule"><span>11 ед.</span><b>суммарный дефицит</b><small>точное действие вместо общей тревоги</small></div></div></section>
+
+    <section class="logic">
+      <div class="logic-head"><p class="eyebrow">02 / ЛОГИКА</p><h2>Один товар.<br>Четыре состояния.</h2></div>
+      <ol class="states"><li><span>01</span><b>Черновик</b><p>Можно спокойно подготовить карточку.</p></li><li><span>02</span><b>Активен</b><p>Позиция участвует в рабочих расчётах.</p></li><li><span>03</span><b>Архив</b><p>Товар скрыт, но данные сохранены.</p></li><li><span>04</span><b>Восстановлен</b><p>Возвращается без повторного ввода.</p></li></ol>
+    </section>
+
+    <section class="import" id="import">
+      <div class="import-copy"><p class="eyebrow">03 / БЕЗОПАСНЫЙ ИМПОРТ</p><h2>Сначала увидеть.<br>Потом применить.</h2><p>Каждая строка получает понятный результат: обновить, создать или пропустить. Для обновления показывается состояние «до → после», а всю партию можно отменить.</p><div class="import-legend"><span><i></i>Обновить</span><span><i></i>Создать</span><span><i></i>Пропустить</span></div></div>
+      <figure><img src="media/stockroom-import-premium.png" alt="Предпросмотр импорта Stockroom с изменениями до и после"><figcaption><b>2</b> корректные строки <span>/</span> <b>1</b> ошибка</figcaption></figure>
+    </section>
+
+    <section class="mobile" id="mobile">
+      <div class="mobile-copy"><p class="eyebrow">04 / МОБИЛЬНЫЙ СЦЕНАРИЙ</p><h2>Та же работа.<br>Меньше шума.</h2><p>На телефоне вторичные поля уходят из первого слоя. Сводка, дефицит и основные статусы остаются читаемыми, а длинная форма прокручивается внутри окна.</p><div class="mobile-proof"><span>320 px</span><small>минимальная проверенная ширина</small></div></div>
+      <div class="phones"><figure><img src="media/stockroom-mobile-premium.png" alt="Мобильный каталог Stockroom"></figure><figure><img src="media/stockroom-editor-mobile-premium.png" alt="Редактор товара Stockroom на мобильном устройстве"></figure></div>
+    </section>
+
+    <section class="result"><p class="eyebrow">05 / РЕЗУЛЬТАТ</p><div><h2>Спокойный интерфейс<br>для рискованных действий.</h2><p>Рабочий frontend-продукт: финансовая сводка, очередь дефицита, поиск, фильтры, карточка товара, массовые операции, журнал и обратимый импорт.</p></div><ul><li><b>8</b><span>автотестов</span></li><li><b>5</b><span>фильтров</span></li><li><b>4</b><span>состояния товара</span></li><li><b>320</b><span>px без переполнения</span></li></ul><small class="honesty">Демо использует подготовленный набор строк. Реальный CSV и постоянное хранение подключаются серверным этапом.</small></section>
+  </main>
+  <footer><b>STOCKROOM</b><span>Product design · UX systems · Frontend</span><a href="#top">Наверх ↑</a></footer>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#173c35">
+  <meta name="description" content="Groundlog — полевой журнал, который работает без сети и не скрывает конфликты версий.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css?v=3">
+  <title>Groundlog · Полевой журнал</title>
+</head>
+<body>
+  <a class="skip-link" href="#titleInput">К текущей записи</a>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Groundlog, полевой журнал">
+      <span class="mark" aria-hidden="true"><i></i><i></i></span>
+      <span class="brand-copy"><strong>Groundlog</strong><small>FIELD NOTES / 02</small></span>
+    </a>
+    <div class="shift-meta" aria-label="Текущая смена">
+      <span>Смена 08/27</span><span>Бригада 04</span><span class="coordinates">55.753° N · 37.621° E</span>
+    </div>
+    <div class="top-actions">
+      <button class="connection" id="connectionButton" type="button" aria-live="polite" title="Переключить демо-соединение">
+        <span class="connection-dot" aria-hidden="true"></span><span id="connectionLabel">В сети</span><small id="connectionHint">канал доступен</small>
+      </button>
+      <button class="icon-button" id="resetButton" type="button" aria-label="Сбросить демо" title="Сбросить демо"><span aria-hidden="true">↺</span></button>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <aside class="visits" aria-label="Выезды">
+      <div class="route-kicker"><span>Маршрут / 02 точки</span><span>64% смены</span></div>
+      <div class="route-line" aria-hidden="true"><span></span></div>
+      <div class="section-head">
+        <div><p class="eyebrow">27 августа · среда</p><h1>Полевой<br>маршрут</h1></div>
+        <button class="new-button" id="newButton" type="button" aria-label="Создать новую запись" title="Новая запись (Alt+N)"><span aria-hidden="true">＋</span></button>
+      </div>
+      <div class="filter-row" role="group" aria-label="Фильтр выездов">
+        <button class="filter active" type="button" aria-pressed="true">Сегодня <span>02</span></button>
+        <button class="filter" type="button" aria-pressed="false">Архив <span>14</span></button>
+      </div>
+      <div class="visit-list" id="visitList">
+        <button class="visit-card active" data-id="visit-north" type="button"><span class="visit-index">01</span><div><strong>Северный фасад</strong><p>Объект 14 · Корпус B</p></div><span class="state-dot"></span></button>
+        <button class="visit-card" data-id="visit-roof" type="button"><span class="visit-index">02</span><div><strong>Контур кровли</strong><p>Объект 14 · Кровля</p></div><span class="state-dot"></span></button>
+      </div>
+      <div class="local-note"><span class="local-icon" aria-hidden="true">⌁</span><p><strong>Локальная копия активна</strong>Записи и очередь отправки остаются на этом устройстве.</p></div>
+    </aside>
+
+    <section class="editor" id="editor" aria-live="polite">
+      <div class="field-grid" aria-hidden="true"></div>
+      <div class="editor-inner">
+        <div class="editor-top">
+          <div class="record-meta"><p class="eyebrow" id="siteLabel">Объект</p><p class="version" id="versionLabel">Версия —</p></div>
+          <div class="record-state" id="recordState"><span></span>Сохранено</div>
+        </div>
+
+        <div class="record-number" aria-hidden="true">FIELD NOTE <span>01—A</span></div>
+        <label class="sr-only" for="titleInput">Название записи</label>
+        <input class="title-input" id="titleInput" maxlength="300" autocomplete="off" value="Северный фасад">
+        <label class="body-label" for="bodyInput"><span>Наблюдение</span><small>автосохранение на устройство</small></label>
+        <textarea class="body-input" id="bodyInput" maxlength="8000">Проверить крепление у входной группы. Зафиксировать размер и состояние узла.</textarea>
+
+        <div class="facts" aria-label="Параметры записи">
+          <label class="fact" for="siteInput"><span>Участок</span><input id="siteInput" maxlength="300" value="Объект 14 · Корпус B"></label>
+          <label class="fact" for="tagsInput"><span>Метки</span><input id="tagsInput" maxlength="180" placeholder="через запятую" value="осмотр, фасад"></label>
+          <label class="fact" for="statusInput"><span>Статус</span><select id="statusInput"><option value="draft">Черновик</option><option value="ready">Осмотр завершён</option></select></label>
+        </div>
+
+        <div class="protocol" aria-label="Протокол сохранения">
+          <div><span>01</span><p><strong>Сначала на устройство</strong>IndexedDB хранит рабочую копию</p></div>
+          <div><span>02</span><p><strong>Затем в outbox</strong>Одна операция на запись</p></div>
+          <div><span>03</span><p><strong>Сверка версий</strong>Конфликт решает человек</p></div>
+        </div>
+
+        <section class="conflict" id="conflictPanel" hidden tabindex="-1">
+          <div class="conflict-head">
+            <div><p class="eyebrow">Конфликт / обе копии сохранены</p><h2>Две версии.<br><em>Решение за вами.</em></h2></div>
+            <span class="warning-badge">Требует внимания</span>
+          </div>
+          <p class="conflict-copy">Пока устройство было без сети, запись изменилась в офисе. Сравните тексты: Groundlog не выберет победителя автоматически.</p>
+          <div class="compare">
+            <article><p class="compare-label"><span>LOCAL</span>На устройстве</p><div id="localVersion"></div></article>
+            <article><p class="compare-label"><span>REMOTE</span>В офисе</p><div id="remoteVersion"></div></article>
+          </div>
+          <label class="merge-label" for="mergeInput">Итоговый текст <small>можно отредактировать перед отправкой</small></label>
+          <textarea id="mergeInput" class="merge-input"></textarea>
+          <div class="resolution-actions">
+            <button class="primary" data-resolve="merge" type="button">Объединить и отправить <span>→</span></button>
+            <button class="quiet" data-resolve="local" type="button">Оставить мою</button>
+            <button class="quiet" data-resolve="remote" type="button">Принять офисную</button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <section class="sync-tray" aria-live="polite" aria-label="Состояние синхронизации">
+    <div class="sync-summary"><span class="sync-icon" id="syncIcon">✓</span><div><strong id="syncTitle">Все изменения сохранены</strong><span id="syncDetail">Локально и в офисе</span></div></div>
+    <div class="sync-ledger"><span>OUTBOX</span><strong id="queueCount">00</strong><small id="syncTime">готово к работе</small></div>
+    <div class="tray-actions"><button class="demo-button" id="collaboratorButton" type="button">Изменить в офисе</button><button class="sync-button" id="syncButton" type="button">Синхронизировать <span>⇧</span></button></div>
+  </section>
+  <div class="toast" id="toast" role="status"></div>
+  <script type="module" src="./app.js?v=3"></script>
+</body>
+</html>

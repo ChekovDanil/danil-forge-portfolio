@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Operator UI Kit — система компонентов для очередей, согласований и операторских интерфейсов.">
+  <title>Operator UI Kit</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <a class="skip-link" href="#patterns">К рабочему сценарию</a>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Operator UI Kit, в начало"><span class="brand-mark">O<span>01</span></span><span><b>Operator UI</b><small>System kit / 1.1</small></span></a>
+    <nav aria-label="Разделы"><a href="#foundations">Основа</a><a href="#components">Компоненты</a><a href="#patterns">Сценарий</a></nav>
+    <div class="topbar-meta"><span><i aria-hidden="true"></i>Community-ready</span><button class="button button-secondary compact" id="densityButton" type="button" aria-pressed="false">Плотнее</button></div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy-block">
+        <p class="eyebrow"><span>Operational interface system</span><b>34 variants / 12 components</b></p>
+        <h1>Интерфейс для решений,<br><em>а не для шума.</em></h1>
+        <p class="hero-copy">Система для очередей, согласований и админ-панелей. Контекст остаётся спокойным, исключение становится заметным, следующий шаг не приходится искать.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#patterns">Открыть рабочий паттерн</a><a class="text-link" href="#foundations">Посмотреть токены <span aria-hidden="true">↓</span></a></div>
+      </div>
+
+      <article class="hero-spec" aria-label="Анатомия операторской записи">
+        <header><span>QUEUE ROW / ANATOMY</span><b>SPEC 07</b></header>
+        <div class="spec-route" aria-hidden="true"><span>CONTEXT</span><i></i><span>SIGNAL</span><i></i><span>ACTION</span></div>
+        <div class="spec-record">
+          <div class="spec-index">A7</div>
+          <div><small>Высокий приоритет</small><strong>Проверить доступ к API платежей</strong><p>Интеграция ожидает подтверждения владельца.</p></div>
+          <span class="status attention-status">Ваше решение</span>
+          <button class="button button-primary" type="button" data-scroll-decision>Решить</button>
+        </div>
+        <dl><div><dt>01</dt><dd>Контекст не скрыт</dd></div><div><dt>02</dt><dd>Цвет только для сигнала</dd></div><div><dt>03</dt><dd>Один следующий шаг</dd></div></dl>
+      </article>
+
+      <div class="hero-meta" aria-label="Состав набора">
+        <div><strong>34</strong><span>варианта</span></div><div><strong>12</strong><span>компонентов</span></div><div><strong>4</strong><span>рабочих паттерна</span></div><div><strong>390+</strong><span>адаптив без потерь</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="foundations">
+      <div class="section-heading"><div class="section-index">01</div><div><p class="eyebrow">Foundations</p><h2>Система держится<br>на контрасте ролей.</h2></div><p>Нейтральные поверхности несут структуру. Синий обозначает активную работу, янтарный — решение владельца, красный — реальную блокировку.</p></div>
+      <div class="foundation-grid">
+        <article class="foundation-panel color-panel">
+          <header><div><span>COLOR / SEMANTIC</span><h3>Состояния, не украшения</h3></div><b>10 TOKENS</b></header>
+          <div class="token-list" aria-label="Цветовая палитра">
+            <div class="token-row token-ink"><i></i><span><b>Ink</b><small>Текст / primary action</small></span><code>#151A1C</code></div>
+            <div class="token-row token-canvas"><i></i><span><b>Canvas</b><small>Рабочий фон</small></span><code>#EFF0EB</code></div>
+            <div class="token-row token-accent"><i></i><span><b>Active</b><small>Процесс выполняется</small></span><code>#3658B8</code></div>
+            <div class="token-row token-attention"><i></i><span><b>Attention</b><small>Нужно решение</small></span><code>#C45B24</code></div>
+            <div class="token-row token-danger"><i></i><span><b>Blocked</b><small>Работа остановлена</small></span><code>#A83F37</code></div>
+          </div>
+        </article>
+
+        <article class="foundation-panel type-panel">
+          <header><div><span>TYPE / SCALE</span><h3>Плотность без микротекста</h3></div><b>4 ROLES</b></header>
+          <div class="display-sample"><span>Display / 56</span><strong>Ясная очередь</strong></div>
+          <div class="type-specs"><div><span>Title / 26</span><b>Решение по заказу</b></div><div><span>Body / 15</span><p>Контекст объясняет действие и остаётся читаемым в плотном режиме.</p></div><div><span>Label / 12</span><b>ВЫСОКИЙ ПРИОРИТЕТ</b></div></div>
+        </article>
+
+        <article class="foundation-panel principle-panel">
+          <header><div><span>LAYOUT / RULES</span><h3>Три правила поверхности</h3></div><b>LEVEL 1</b></header>
+          <ol><li><span>01</span><div><b>Сначала исключение</b><p>Норма остаётся тихой, риск не зависит только от цвета.</p></div></li><li><span>02</span><div><b>Стабильная геометрия</b><p>Строки не прыгают между loading, empty и resolved.</p></div></li><li><span>03</span><div><b>Действие принадлежит записи</b><p>Кнопка всегда находится рядом с контекстом решения.</p></div></li></ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="components">
+      <div class="section-heading"><div class="section-index">02</div><div><p class="eyebrow">Component field</p><h2>Один язык<br>во всех состояниях.</h2></div><p>Компоненты показаны как рабочие элементы, а не как коллекция декоративных вариантов. Каждый имеет понятное назначение, focus и disabled-состояние.</p></div>
+
+      <div class="component-field">
+        <article class="component-row">
+          <header><span>01 / ACTION</span><h3>Кнопки</h3><p>Главное действие, вторичное, тихое и опасное.</p></header>
+          <div class="component-stage button-stage"><button class="button button-primary">Подтвердить</button><button class="button button-secondary">Открыть</button><button class="button button-quiet">Отложить</button><button class="button button-danger">Отменить</button><button class="button button-primary" disabled>Недоступно</button><button class="icon-button" aria-label="Дополнительные действия">•••</button></div>
+        </article>
+
+        <article class="component-row">
+          <header><span>02 / INPUT</span><h3>Поля</h3><p>Подпись остаётся видимой. Ошибка сразу предлагает исправление.</p></header>
+          <div class="component-stage field-stage">
+            <label class="field"><span>Поиск</span><input type="search" placeholder="Заказ, клиент или исполнитель"></label>
+            <label class="field"><span>Статус</span><select><option>Все активные</option><option>Требуют решения</option><option>В работе</option></select></label>
+            <label class="field field-error"><span>Лимит, ₽</span><input value="2500000" aria-invalid="true" aria-describedby="limitError"><small id="limitError">Введите сумму до 1 000 000 ₽.</small></label>
+          </div>
+        </article>
+
+        <article class="component-row">
+          <header><span>03 / STATUS</span><h3>Статусы</h3><p>Текст и форма сигнала дублируют цвет.</p></header>
+          <div class="component-stage status-stage"><span class="status neutral">В очереди</span><span class="status accent-status">В работе</span><span class="status attention-status">Ваше решение</span><span class="status danger-status">Заблокировано</span><span class="status success-status">Готово</span></div>
+        </article>
+
+        <article class="component-row">
+          <header><span>04 / FEEDBACK</span><h3>Системные состояния</h3><p>Loading и empty сохраняют место и объясняют следующий шаг.</p></header>
+          <div class="component-stage feedback-stage"><div class="loading-state" aria-label="Загрузка записи"><i></i><span><b></b><b></b></span></div><div class="inline-empty"><i aria-hidden="true">✓</i><span><b>Всё спокойно</b><small>Нет задач, требующих решения.</small></span></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section pattern-section" id="patterns">
+      <div class="section-heading"><div class="section-index">03</div><div><p class="eyebrow">Working pattern</p><h2>Очередь замечает<br>исключение первой.</h2></div><p>Фильтр, поиск, плотность, уведомление и решение работают в этой локальной витрине. Данные демонстрационные и никуда не отправляются.</p></div>
+
+      <div class="workspace-demo">
+        <aside class="workspace-rail" aria-label="Раздел рабочего примера"><span class="workspace-logo">O</span><i></i><b>Q</b><span>03</span></aside>
+        <div class="workspace-main">
+          <div class="workspace-bar"><div><span class="workspace-kicker">Операционная очередь / 26 августа</span><h3>Текущая работа</h3></div><div class="workspace-actions"><label class="search-mini"><span aria-hidden="true">⌕</span><input id="queueSearch" type="search" aria-label="Поиск в демонстрации" placeholder="Найти запись"></label><button class="icon-button notice-button" id="noticeButton" aria-label="Показать 3 уведомления"><i aria-hidden="true"></i>3</button></div></div>
+          <div class="queue-toolbar"><div class="chips" role="group" aria-label="Фильтры очереди"><button class="chip selected" data-filter="all" aria-pressed="true">Все <b>3</b></button><button class="chip" data-filter="mine" aria-pressed="false">Ваши <b>2</b></button><button class="chip" data-filter="risk" aria-pressed="false">Проблемы <b>1</b></button></div><p id="filterNote" aria-live="polite">Показаны все активные записи.</p></div>
+          <div class="queue" role="table" aria-label="Пример очереди задач">
+            <div class="queue-head" role="row"><span role="columnheader">Задача</span><span role="columnheader">Исполнитель</span><span role="columnheader">Срок</span><span role="columnheader">Статус</span><span role="columnheader">Действие</span></div>
+            <article class="queue-row priority" id="accessRow" role="row" data-kind="risk mine" data-search="api платежей доступ владелец">
+              <div class="task-cell" role="cell"><span class="priority-label">Высокий приоритет</span><strong>Проверить доступ к API платежей</strong><small>Интеграция остановлена до подтверждения владельца.</small></div><span role="cell" data-label="Исполнитель">Вы</span><span role="cell" data-label="Срок">Сегодня, 16:00</span><span role="cell" data-label="Статус"><i class="status attention-status row-status">Ваше решение</i></span><button class="button button-primary compact open-decision" type="button" data-scroll-decision>Решить</button>
+            </article>
+            <article class="queue-row" role="row" data-kind="mine" data-search="отчёт обращения codex экспорт">
+              <div class="task-cell" role="cell"><strong>Собрать отчёт по обращениям</strong><small>Данные проверены, экспорт формируется автоматически.</small></div><span role="cell" data-label="Исполнитель">Codex</span><span role="cell" data-label="Срок">Сегодня, 18:30</span><span role="cell" data-label="Статус"><i class="status accent-status">В работе</i></span><button class="button button-secondary compact" type="button" data-toast="Отчёт открыт в демонстрационном режиме.">Открыть</button>
+            </article>
+            <article class="queue-row" role="row" data-kind="all" data-search="каталог карточки изображения результат">
+              <div class="task-cell" role="cell"><strong>Обновить карточки каталога</strong><small>12 из 12 изображений подготовлены и проверены.</small></div><span role="cell" data-label="Исполнитель">Codex</span><span role="cell" data-label="Срок">27 августа</span><span role="cell" data-label="Статус"><i class="status success-status">Готово</i></span><button class="button button-secondary compact" type="button" data-toast="Результат готов: 12 изображений проверены.">Результат</button>
+            </article>
+            <div class="queue-no-results" id="noResults" hidden><span>0 результатов</span><b>Ничего не найдено</b><p>Измените поиск или верните фильтр «Все».</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pattern-grid">
+        <article class="decision-note" id="decisionNote" aria-live="polite">
+          <div class="decision-copy"><span class="priority-label">Нужно ваше решение</span><h3 id="decisionTitle">Разрешить тестовый доступ?</h3><p id="decisionCopy">Без доступа нельзя проверить оплату. Агент не будет менять данные и использует только тестовый режим.</p></div>
+          <div class="decision-meta"><div><span>Риск</span><strong>Средний</strong></div><div><span>Следующий шаг</span><strong>Проверка API</strong></div></div>
+          <div class="decision-actions"><button class="button button-primary" id="approveButton">Разрешить</button><button class="button button-secondary" id="rejectButton">Отклонить</button></div>
+        </article>
+        <article class="state-panel"><header><span>EMPTY / RESOLVED</span><b>NO DEAD END</b></header><div class="empty-icon" aria-hidden="true">✓</div><strong>Всё спокойно</strong><p>Нет задач, которые требуют вашего решения. Автоматическая работа продолжится в фоне.</p></article>
+      </div>
+    </section>
+
+    <section class="section closing"><div class="section-index">04</div><p class="eyebrow">Handoff</p><h2>Токены, правила<br>и проверяемые сценарии.</h2><p>Локальный пакет — реализация и спецификация будущего Community-файла. Нативный Figma-файл и публикация требуют авторизации владельца и в текущий scope не входят.</p><div class="deliverables"><span>Tokens JSON</span><span>Component spec</span><span>Responsive proof</span><span>Accessibility states</span><span>No client data</span></div></section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js" type="module"></script>
+</body>
+</html>

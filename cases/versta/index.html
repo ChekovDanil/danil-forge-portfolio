@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Верста — кейс пассажирского PWA для заказа поездок.">
+  <title>Верста — пассажирский PWA</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./supervisor.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Верста, наверх">ВЕРСТА</a>
+    <nav aria-label="Разделы кейса">
+      <a href="#route">Маршрут</a>
+      <a href="#fare">Расчёт</a>
+      <a href="#result">Результат</a>
+    </nav>
+    <span>CASE 03 / 2026</span>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">PASSENGER MOBILITY PWA</p>
+        <h1>Поездка.<br><em>Без лишних шагов.</em></h1>
+        <p class="lead">Маршрут, цена и заказ — на одном экране.</p>
+        <dl class="facts">
+          <div><dt>Роль</dt><dd>Product design</dd></div>
+          <div><dt>Формат</dt><dd>Mobile PWA</dd></div>
+          <div><dt>Система</dt><dd>Map-first flow</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-stage" aria-label="Три состояния пассажирского приложения">
+        <figure class="phone phone-pickup">
+          <div class="shot-crop"><img src="./media/pickup-public.png" alt="Выбор точки подачи на светлой карте"></div>
+        </figure>
+        <figure class="phone phone-route">
+          <div class="shot-crop"><img src="./media/route-light.png" alt="Маршрут на светлой карте"></div>
+        </figure>
+        <figure class="phone phone-fare">
+          <div class="shot-crop"><img src="./media/fare-card.png" alt="Карточка расчёта и тарифов"></div>
+        </figure>
+        <p class="stage-note"><b>01</b><span>От точки на карте<br>до готового заказа</span></p>
+      </div>
+    </section>
+
+    <section class="statement" id="result">
+      <p class="eyebrow">ПРИНЦИП</p>
+      <h2>Пользователь видит главное.<br>Система делает остальное.</h2>
+      <div class="metrics" aria-label="Параметры демонстрационного маршрута">
+        <div><strong>6 мин</strong><span>в пути</span></div>
+        <div><strong>2,4 км</strong><span>маршрут</span></div>
+        <div><strong>3 состояния</strong><span>до заказа</span></div>
+      </div>
+    </section>
+
+    <section class="feature feature-map" id="route">
+      <div class="feature-copy">
+        <p class="index">01 / МАРШРУТ</p>
+        <h2>Точка подачи понятна сразу.</h2>
+        <p>Карта, адрес и основное действие собраны в одной спокойной композиции. Следующий экран показывает весь маршрут.</p>
+      </div>
+      <figure class="screen-panel">
+        <div class="shot-crop"><img src="./media/pickup-public.png" alt="Пассажир выбирает точку подачи на карте"></div>
+      </figure>
+    </section>
+
+    <section class="feature feature-fare" id="fare">
+      <figure class="screen-panel">
+        <div class="shot-crop"><img src="./media/fare-card.png" alt="Пассажир выбирает режим, тариф и оплату"></div>
+      </figure>
+      <div class="feature-copy">
+        <p class="index">02 / РАСЧЁТ</p>
+        <h2>Цена понятна до подтверждения.</h2>
+        <p>Режим поездки, тариф и способ оплаты находятся внутри одного последовательного шага.</p>
+      </div>
+    </section>
+
+    <section class="closing">
+      <p>Реальный интерфейс · светлая карта · пассажирский сценарий</p>
+      <h2>Верста</h2>
+      <span>Поездки под контролем</span>
+    </section>
+  </main>
+</body>
+</html>
