@@ -1,0 +1,13 @@
+body.export-mode { background: #101827; overflow: hidden; }
+body.export-mode > header,
+body.export-mode > footer,
+body.export-mode > .manifest,
+body.export-mode > .export-nav,
+body.export-mode > .skip { display: none; }
+body.export-mode main { display: block; padding: 0; }
+body.export-mode .board-wrap { width: 100%; margin: 0; }
+body.export-mode .board-wrap > figcaption { display: none; }
+body.export-mode .artboard { width: 100%; margin: 0; box-shadow: none; }
+body.export-mode .artboard[hidden] { display: none; }
+body.export-mode .square { width: 100%; }
+body.export-mode .light { background: #e9e6de; color: #172136; }

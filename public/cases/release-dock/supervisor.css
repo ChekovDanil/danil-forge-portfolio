@@ -1,0 +1,17 @@
+/* Final presentation pass: technical proof remains legible on every viewport. */
+.top nav,.top p,.hero small,.thesis>small,.gates header small,.backup header small,
+.runbook header small,.proof-boundary>small,.hero dt,.hero dd,.hero figcaption span,
+.thesis li,.thesis li span,.gate-grid span,.gate-grid p,.backup figcaption span,
+.backup figcaption b,.backup-flow span,.backup-flow b,.runbook figcaption,
+.numbers span,.boundary p,footer{font-size:11px}
+
+@media(max-width:700px){
+  .gates figure img,.backup figure img,.runbook figure img{
+    width:100%;max-width:100%;transform:none
+  }
+  .top p,.hero small,.thesis>small,.gates header small,.backup header small,
+  .runbook header small,.proof-boundary>small,.hero dt,.hero dd,.hero figcaption span,
+  .thesis li,.thesis li span,.gate-grid span,.gate-grid p,.backup figcaption span,
+  .backup figcaption b,.backup-flow span,.backup-flow b,.runbook figcaption,
+  .numbers span,.boundary p,footer{font-size:12px}
+}

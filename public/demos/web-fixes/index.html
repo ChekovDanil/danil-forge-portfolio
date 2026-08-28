@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Проверяемый кейс адаптивного исправления горизонтальной галереи.">
+  <title>Web Fixes Lab — галерея до и после</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./premium.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#lab-title">К интерактивной проверке</a>
+  <main>
+    <header class="hero">
+      <div class="eyebrow"><span>WEB FIXES LAB</span><span>01 / RESPONSIVE</span></div>
+      <div class="hero-grid">
+        <h1>Скрытый ряд стал<br>управляемой галереей.</h1>
+        <div class="intro">
+          <p>Разбираем один реальный дефект: карточки продолжались за экраном, но интерфейс этого не объяснял.</p>
+          <div class="proof"><span>1 дефект</span><span>2 размера</span><span>4 проверки</span></div>
+        </div>
+      </div>
+    </header>
+
+    <section class="fix-trace" aria-label="Маршрут исправления">
+      <div><span>01</span><b>OVERFLOW</b><small>контент скрыт</small></div><i></i>
+      <div><span>02</span><b>CUE</b><small>продолжение видно</small></div><i></i>
+      <div><span>03</span><b>CONTROL</b><small>snap · arrows · keys</small></div>
+    </section>
+
+    <section class="lab" aria-labelledby="lab-title">
+      <div class="lab-head">
+        <div><span class="label">ИНТЕРАКТИВНАЯ ПРОВЕРКА</span><h2 id="lab-title">Сравните одно состояние</h2></div>
+        <div class="control-row">
+          <div class="segmented" role="group" aria-label="Состояние интерфейса">
+            <button type="button" data-mode="before" aria-pressed="false">До исправления</button>
+            <button type="button" data-mode="after" class="active" aria-pressed="true">После</button>
+          </div>
+          <div class="segmented quiet" role="group" aria-label="Размер просмотра">
+            <button type="button" data-viewport="mobile" class="active" aria-pressed="true">390 px</button>
+            <button type="button" data-viewport="desktop" aria-pressed="false">1440 px</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="browser-shell mobile" id="browserShell">
+        <div class="browser-bar"><i></i><i></i><i></i><span>marketplace.cards / axis-air</span></div>
+        <div class="demo-page">
+          <div class="demo-heading"><div><small>01 / TECHNICAL</small><h3>Axis Air</h3></div><p>Пять карточек одной серии</p></div>
+
+          <div class="state before-state" hidden>
+            <div class="before-note">Продолжение не обозначено</div>
+            <div class="card-track legacy" tabindex="0" aria-label="Галерея до исправления">
+              <img src="./assets/axis-01.png" alt="Карточка Axis Air 1">
+              <img src="./assets/axis-02.png" alt="Карточка Axis Air 2">
+              <img src="./assets/axis-03.png" alt="Карточка Axis Air 3">
+              <img src="./assets/axis-04.png" alt="Карточка Axis Air 4">
+              <img src="./assets/axis-05.png" alt="Карточка Axis Air 5">
+            </div>
+          </div>
+
+          <div class="state after-state">
+            <div class="carousel-head">
+              <p>Листайте серию</p>
+              <div class="carousel-controls">
+                <span id="position" aria-live="polite">01 / 05</span>
+                <button type="button" id="prev" aria-label="Предыдущая карточка">←</button>
+                <button type="button" id="next" aria-label="Следующая карточка">→</button>
+              </div>
+            </div>
+            <div class="card-track fixed" id="fixedTrack" tabindex="0" aria-label="Исправленная галерея. Используйте стрелки клавиатуры.">
+              <img src="./assets/axis-01.png" alt="Карточка Axis Air 1">
+              <img src="./assets/axis-02.png" alt="Карточка Axis Air 2">
+              <img src="./assets/axis-03.png" alt="Карточка Axis Air 3">
+              <img src="./assets/axis-04.png" alt="Карточка Axis Air 4">
+              <img src="./assets/axis-05.png" alt="Карточка Axis Air 5">
+            </div>
+            <div class="edge-cue" aria-hidden="true">ещё 4</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="evidence" aria-label="Что было исправлено">
+      <article><span>ПРОБЛЕМА</span><h2>Контент существовал,<br>но оставался скрытым.</h2><p>Фиксированные карточки уходили вправо. На телефоне не было ни позиции, ни подсказки продолжения, ни предсказуемой остановки.</p></article>
+      <article><span>РЕШЕНИЕ</span><h2>Навигация стала<br>частью интерфейса.</h2><p>Добавлены snap-позиции, счётчик, стрелки, клавиатура и лёгкая подсказка следующего кадра. Сами коммерческие карточки не менялись.</p></article>
+    </section>
+
+    <section class="checks">
+      <div><span>01</span><p>390 px<br><b>край виден</b></p></div>
+      <div><span>02</span><p>1440 px<br><b>стрелки доступны</b></p></div>
+      <div><span>03</span><p>← →<br><b>клавиатура</b></p></div>
+      <div><span>04</span><p>01 / 05<br><b>позиция объявлена</b></p></div>
+    </section>
+
+    <footer><span>Изолированная копия исходной галереи</span><span>Готовые карточки и экспорты не изменены</span></footer>
+  </main>
+</body>
+</html>
