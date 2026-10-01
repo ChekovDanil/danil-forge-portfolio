@@ -75,3 +75,16 @@ test('подготовлены метаданные и social preview', async ()
   assert.match(html, /property="og:image" content="\.\/assets\/social-preview\.png"/);
   await access(new URL('public/assets/social-preview.png', root));
 });
+
+test('кейс Версты показывает пассажира, водителя и управление без ложных показателей', async () => {
+  const caseHtml = await readFile(new URL('public/cases/versta/index.html', root), 'utf8');
+  for (const label of ['ПАССАЖИР', 'ВОДИТЕЛЬ', 'КОМАНДА СЕРВИСА', 'демонстрационные данные']) {
+    assert.ok(caseHtml.includes(label), label);
+  }
+  for (const [, source, alt] of caseHtml.matchAll(/<img[^>]+src="([^"]+)"[^>]+alt="([^"]+)"/g)) {
+    assert.ok(alt.trim().length > 10, source);
+    await access(new URL(`public/cases/versta/${source.replace(/^\.\//, '')}`, root));
+  }
+  await access(new URL('public/cases/versta/case.css', root));
+  await access(new URL('public/versta-preview.css', root));
+});
