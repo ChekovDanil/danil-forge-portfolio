@@ -1,4 +1,4 @@
-import { conversion, pipelineStats, removeDeal, stages, upcoming, upsertDeal } from "/src/pipeline.js";
+import { conversion, pipelineStats, removeDeal, stages, upcoming, upsertDeal } from "./pipeline.js";
 
 const $ = (id) => document.getElementById(id);
 const money = (value) => `${new Intl.NumberFormat("ru-RU").format(Math.round(value))} ₽`;
