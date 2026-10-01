@@ -1,0 +1,11 @@
+/* Phone presentation of the supplied app screen; no desktop chrome. */
+.temno-phone{position:relative;display:block;margin:0;padding:6px;border:1px solid #626970;border-radius:32px;background:linear-gradient(135deg,#555b62,#171a1e 20%,#101214 78%,#5d646c);box-shadow:0 25px 65px #0005,inset 0 1px 1px #ffffff60;overflow:hidden;isolation:isolate}
+.temno-screen{position:relative;width:100%;aspect-ratio:390/780;border-radius:25px;overflow:hidden;background:#101211}
+.temno-content{position:absolute;inset:22px 0 0;overflow:hidden}
+.temno-screen img{position:absolute;inset:-4.2% 0 auto;width:100%;max-width:none;height:104.2%;object-fit:fill;border:0;border-radius:0;transform:none}
+.temno-phone .phone-camera{position:absolute;z-index:3;top:12px;left:50%;transform:translateX(-50%);width:28%;height:12px;border-radius:20px;background:#060708;box-shadow:inset 0 1px 1px #ffffff0b}
+.temno-phone:after{display:none}
+.temno-phone figcaption{position:absolute;left:0;right:0;bottom:-32px;text-align:center;font-size:12px;color:#8d9496}
+@media(max-width:760px){.temno-phone{padding:4px;border-radius:24px}.temno-screen{border-radius:19px}.temno-phone .phone-camera{top:8px;height:9px}}
+@media(max-width:760px){.temno-content{top:16px}}
+.hero-scene>.scene-temno{position:absolute}.temno-art>.temno-preview{position:absolute}
