@@ -39,3 +39,26 @@ h1{font-weight:500;letter-spacing:-.055em}h1 em{color:#c6d4ef}.lead{color:#b0b4b
 .project-art{box-shadow:inset 0 0 0 1px #ffffff0a;transition:box-shadow .25s ease}.project-art:hover{box-shadow:inset 0 0 0 1px #ffffff22}.project-action{display:inline-flex;align-items:center;gap:22px;min-height:48px;padding:0 19px;border:1px solid #3b3f47;border-radius:8px;background:#181a1f;color:#dfe1e6;font-size:14px;font-weight:450;white-space:nowrap;transition:border-color .2s,background .2s}.project-action:hover{border-color:#686e78;background:#22252c}.project-action:focus-visible{outline:2px solid #ccd1da;outline-offset:5px}
 .arrow-link{gap:12px;border-bottom:0;color:#c7cad2;min-height:44px}.arrow-link:hover{color:#fff}.arrow-link .link-icon{color:#939aa7;width:17px;height:17px}.header nav a{transition:color .2s}.button .link-icon{color:#b8bdc8;width:17px;height:17px}
 @media(max-width:760px){.phone{padding:2px;border-radius:22px}.phone img{border-radius:19px}.phone:after{top:7px;height:8px}.statusbar{top:9px;left:11px;right:11px}.project-action{margin-top:18px;min-height:46px;font-size:13px}}
+/* Approved violet lighting; slim metal bodies, not emissive outlines. */
+
+html,body{overflow-x:clip}body{background:#111016}
+.hero-scene{isolation:isolate}
+.hero-scene:before{inset:-14%;background:radial-gradient(ellipse at 35% 65%,#862cf540,transparent 48%),radial-gradient(ellipse at 80% 45%,#4277ff35,transparent 48%),radial-gradient(ellipse at 56% 83%,#cb63ff12,transparent 45%);filter:blur(25px)}
+.hero .phone{padding:3px;border:1px solid transparent;border-radius:29px;background:linear-gradient(110deg,#121117,#050609 32%,#17151d 82%,#100f15) padding-box,linear-gradient(145deg,#ccc0d6 0%,#624077 7%,#211e29 17%,#17191e 33%,#59657e 48%,#343446 51%,#161820 67%,#678ac0 82%,#2d2540 90%,#b797c9 100%) border-box;box-shadow:inset 0 0 0 1px #0009,inset 1px 0 1px #e3ccff30,-1px 1px 2px #bb82ea40,1px 0 2px #78a2d640,0 20px 38px #0007}
+.hero .phone img{border-radius:25px}
+.hero .browser{border-color:#a59ddd33;box-shadow:0 28px 80px #0006,0 0 36px #7a56fa16}
+.hero .temno-phone .temno-screen{border-radius:25px}
+.button{border:0;border-radius:14px;padding:17px 23px;min-height:54px;background:linear-gradient(115deg,#8845e8 0%,#703cdb 44%,#456be9 100%);color:#fff;box-shadow:0 8px 26px #6d38da26;gap:34px;font-weight:500}
+.button:before,.button:after{display:none!important;content:none!important}
+.button .link-icon{color:#fff;width:19px;height:19px}
+.button:hover{border:0;background:linear-gradient(115deg,#9957f0,#7e4be3 45%,#577aef);box-shadow:0 10px 30px #8049e43d;transform:none}
+.project-action{border:0;border-radius:12px;background:linear-gradient(130deg,#32233f,#23283f);color:#e9dcff;box-shadow:none}
+.project-action:hover{border:0;background:linear-gradient(130deg,#433052,#303853)}
+.project-art{border:1px solid #b891ed25;box-shadow:none}
+.project-art:hover{box-shadow:0 0 30px #8b52ef0d}
+@media(max-width:760px){.hero .phone{padding:2px;border-radius:23px}.hero .phone img{border-radius:18px}.hero .temno-phone .temno-screen{border-radius:19px}.hero-scene:before{filter:blur(16px)}}
+@media(prefers-reduced-motion:reduce){.button,.project-action{transition:none}}
+
+.hero .phone:before{content:"";position:absolute;inset:0;z-index:5;border-radius:inherit;pointer-events:none;background:linear-gradient(117deg,transparent 0%,#e7d9ff09 3%,transparent 11%,transparent 82%,#bcd8ff0a 92%,transparent 98%)}
+.hero h1{font-size:clamp(56px,5.8vw,88px);line-height:1.04;letter-spacing:-.06em}
+@media(max-width:760px){.hero h1{font-size:clamp(48px,12vw,68px)}.hero .phone img,.hero .temno-phone .temno-screen{border-radius:20px}}
