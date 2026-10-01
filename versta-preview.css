@@ -1,0 +1,9 @@
+/* Featured Versta card: actual passenger, driver and operations screens. */
+.feature-card .versta-gallery{position:relative;display:block;min-height:650px;padding:0!important;border:1px solid #d1d9e4!important;border-radius:22px;background:linear-gradient(140deg,#e6eefb,#f3f6fa)!important;overflow:hidden!important}
+.versta-gallery .visual-caption{z-index:5}
+.versta-gallery .versta-admin-window{position:absolute;top:13%;right:-1%;width:91%;margin:0;border:1px solid #bec9d9;border-radius:11px;background:#fff;box-shadow:0 22px 55px rgba(29,43,74,.17);overflow:hidden;transform:rotate(-2deg)}
+.versta-gallery .versta-admin-window img{display:block!important;width:100%!important;height:auto!important;min-height:0!important;aspect-ratio:auto!important;object-fit:contain!important;box-shadow:none!important}
+.versta-gallery .phone-device{position:absolute;z-index:2;bottom:7%;width:25%;max-width:205px;transform:rotate(-4deg)}
+.versta-gallery .phone-left{left:7%}
+.versta-gallery .phone-center{left:30%;transform:rotate(3deg)}
+@media(max-width:840px){.feature-card .versta-gallery{min-height:460px;margin-inline:0}.versta-gallery .versta-admin-window{top:17%;width:100%;right:-15%}.versta-gallery .phone-device{flex:none;width:31%;max-width:155px;bottom:8%}.versta-gallery .phone-left{left:8%}.versta-gallery .phone-center{left:36%}}
