@@ -1,0 +1,12 @@
+/* TEMNO's real application screen anchors this portfolio preview. */
+.project-card.temno-card{background:#131612;border-color:#323b2b;color:#f3f6ef;box-shadow:0 24px 60px rgba(18,30,12,.14)}
+.temno-card .project-meta{color:#a8b4a1}.temno-card p{color:#b7c1b0}.temno-card .card-link{color:#d4ecb1;border-color:#68864e}
+.project-card.temno-card.wide .project-image.temno-preview{position:relative;display:block;overflow:hidden;min-height:430px;aspect-ratio:1.55;border:1px solid #333b30;border-radius:18px;background:radial-gradient(circle at 72% 42%,rgba(116,152,60,.24),transparent 45%),#0b0e0b;padding:0!important}
+.temno-preview::before{content:"";position:absolute;right:7%;top:10%;width:58%;height:80%;border:1px solid rgba(181,223,116,.12);border-radius:50%;box-shadow:0 0 0 55px rgba(147,187,84,.035)}
+.temno-preview-brand{position:absolute;z-index:1;left:7%;top:9%;font-weight:750;letter-spacing:.25em;font-size:clamp(19px,2.1vw,34px);color:#e7ece4}.temno-preview-brand small{letter-spacing:0;font-size:.45em;color:#aab5a5}
+.temno-preview-note{position:absolute;z-index:1;left:7%;bottom:10%;max-width:30%;font-size:clamp(15px,1.5vw,25px);line-height:1.28;font-weight:600;letter-spacing:-.04em;color:#b5c5a9}
+.temno-card .temno-preview img{position:absolute;left:auto;right:10%;top:5%;height:92%!important;width:auto!important;max-width:55%;object-fit:contain!important;object-position:center!important;border:5px solid #222823;border-radius:18px;box-shadow:0 30px 70px rgba(0,0,0,.6)!important;transform:rotate(-3deg);transition:transform .25s ease}
+.temno-card .temno-preview:hover img{transform:rotate(-1deg) translateY(-3px)}
+@media(max-width:840px){.project-card.temno-card.wide .project-image.temno-preview{min-height:380px;aspect-ratio:1.27}.temno-preview-brand{font-size:20px}.temno-preview-note{font-size:18px}.temno-card .temno-preview img{right:9%;height:86%!important;top:8%;max-width:50%}}
+@media(max-width:480px){.project-card.temno-card.wide .project-image.temno-preview{min-height:300px;aspect-ratio:1.2}.temno-preview-brand{top:10%;left:6%;font-size:15px}.temno-preview-note{left:6%;bottom:12%;font-size:14px;max-width:35%}.temno-card .temno-preview img{right:5%;height:82%!important;top:11%;max-width:53%;border-width:3px}}
+@media(prefers-reduced-motion:reduce){.temno-card .temno-preview img{transition:none}.temno-card .temno-preview:hover img{transform:rotate(-3deg)}}
