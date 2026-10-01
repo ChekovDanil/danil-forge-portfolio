@@ -9,3 +9,6 @@
 @media(max-width:760px){.temno-phone{padding:4px;border-radius:24px}.temno-screen{border-radius:19px}.temno-phone .phone-camera{top:8px;height:9px}}
 @media(max-width:760px){.temno-content{top:16px}}
 .hero-scene>.scene-temno{position:absolute}.temno-art>.temno-preview{position:absolute}
+.temno-phone{padding:3px;border-color:#42464d;background:linear-gradient(135deg,#34383e,#131518 35%,#25292f);border-radius:30px;box-shadow:0 22px 50px #0004,inset 0 1px 0 #ffffff25}.temno-screen{border-radius:26px}.temno-phone .phone-camera{top:10px}
+.link-icon{display:inline-block;width:18px;height:18px;flex:none;vertical-align:middle;color:inherit}
+@media(max-width:760px){.temno-phone{padding:2px;border-radius:22px}.temno-screen{border-radius:19px}.temno-phone .phone-camera{top:7px;height:8px}}
