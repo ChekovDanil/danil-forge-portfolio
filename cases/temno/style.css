@@ -1,26 +1,26 @@
-/* Case narrative with original TEMNO fonts, lighting and hand composition. */
-.case-back{display:inline-flex;align-items:center;min-height:44px;color:#bdbdbd;font-size:14px}
-.site-header{justify-content:space-between}
-.case-lead{font-size:18px;color:#a5a5a5;line-height:1.6}
-.case-links{display:flex;gap:25px;margin:30px 0 36px;font-size:15px;color:#c1c1c1}
-.case-links a{min-height:44px;display:flex;align-items:center}
-.primary-button{display:inline-flex;gap:28px;text-decoration:none}
-.hero-heading{font-size:clamp(34px,4.2vw,55px)!important}
-.case-section-heading{margin-bottom:32px}
-.case-section-heading h2{margin-bottom:12px}
-.case-section-heading p{color:#999;font-size:16px}
-.case-site-preview{overflow:hidden;border-radius:18px;margin:0}
-.case-site-preview img{width:100%;height:auto;display:block}
-.case-application{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px;position:relative}
-.case-feature-list{display:grid;gap:18px;font-size:16px;color:#b1b1b1;margin-top:35px}
-.case-app-device{width:min(300px,80%);justify-self:center;margin:0;padding:4px;position:relative;border-radius:35px;background:linear-gradient(145deg,#a3ae9b,#262b27 15%,#0c0e0c 45%,#303c32 78%,#bed393);box-shadow:0 35px 70px #0006}
-.case-app-device:before{content:"";position:absolute;inset:-65px;z-index:-1;background:radial-gradient(ellipse,#6c983125,transparent 70%)}
-.case-app-glass{position:relative;aspect-ratio:390/780;overflow:hidden;border-radius:31px;background:#101211}
-.case-app-glass img{position:absolute;top:-4.2%;left:0;width:100%;height:104.2%;object-fit:fill}
-.case-device-camera{position:absolute;top:12px;left:37%;width:26%;height:11px;background:#060708;border-radius:16px}
-.key-flow-grid strong{display:block;font-size:18px;margin-top:25px}
-.case-footer{max-width:1240px;margin:auto;padding:40px 32px;border-top:1px solid #ffffff12;display:flex;justify-content:space-between;gap:25px;font-size:14px;color:#aaa}
-.case-footer a{min-height:44px;display:flex;align-items:center}
-@media(max-width:960px){.case-application{grid-template-columns:1fr 1fr;gap:25px}.case-app-device{width:240px;max-width:100%}.case-links{gap:20px}.hero-heading{font-size:36px!important}}
-@media(max-width:600px){.case-application{grid-template-columns:1fr;gap:35px}.case-app-device{width:230px}.case-lead{font-size:16px}.case-footer{padding:25px 18px;flex-wrap:wrap}.hero-copy{padding-bottom:25px}.hero-heading{font-size:32px!important}.case-links{margin:18px 0 24px}}
+/* Compact case with original TEMNO type, lighting and hand composition. */
+body{min-height:100vh}
+.site-header{justify-content:space-between;max-width:1240px;padding:28px 32px;margin:auto}
+.case-back{display:inline-flex;align-items:center;gap:12px;min-height:44px;padding:0 16px;border:1px solid #ffffff20;border-radius:12px;color:#ddd;font-size:14px;transition:background .2s,border-color .2s}
+.case-back:hover{background:#ffffff08;border-color:#ffffff40}
+.case-back:focus-visible,.primary-button:focus-visible{outline:2px solid #b4df8a;outline-offset:5px}
+.hero{max-width:1240px;margin:auto;min-height:0;padding:20px 32px 48px;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+.hero-copy{padding:0;max-width:540px}
+.hero-brand-kicker{font-size:11px;letter-spacing:.12em;color:#909990;margin-bottom:24px}
+.hero-heading{font-size:clamp(32px,4vw,50px)!important;margin-bottom:22px;line-height:1.2}
+.case-lead{font-size:17px;color:#a6ada6;line-height:1.65;max-width:450px}
+.case-capabilities{display:grid;gap:12px;margin:28px 0 30px;color:#dee2da;font-size:15px}
+.case-capabilities span{display:flex;align-items:center;gap:12px}
+.case-capabilities span:before{content:"";width:5px;height:5px;flex:none;border-radius:50%;background:#b0d984;box-shadow:0 0 10px #a7d77750}
+.primary-button{display:inline-flex;align-items:center;gap:36px;text-decoration:none;font-size:14px;min-height:50px}
+.case-work{margin-top:20px;color:#808980;font-size:12px}
+.case-gaming-note{margin-top:34px;max-width:340px;color:#737c73;font-size:12px;line-height:1.5}
+.case-gaming-note strong{font-weight:400;color:#98a198}
+.case-gaming-note small{font-size:11px;margin-left:5px}
+.case-gaming-note p{margin-top:5px}
+.hero-stage{height:610px;min-height:0}
+.hero-hand{max-height:none}
+@media(max-width:960px){.hero{grid-template-columns:1fr 1fr;padding:18px 28px 35px}.hero-stage{height:550px}.hero-heading{font-size:34px!important}.case-lead{font-size:15px}.case-capabilities{font-size:14px}.case-back{font-size:13px}.site-header{padding:20px 28px}}
+@media(max-width:620px){.site-header{padding:18px;gap:18px}.brand{max-width:145px}.case-back{font-size:12px;padding:0 11px;gap:8px;white-space:nowrap}.hero{display:flex;flex-direction:column;align-items:stretch;padding:22px 22px 0;gap:16px}.hero-copy{padding:0}.hero-brand-kicker{margin-bottom:18px}.hero-heading{font-size:30px!important;margin-bottom:18px}.case-lead{font-size:15px}.case-capabilities{gap:10px;margin:22px 0}.case-work{margin-top:15px}.case-gaming-note{margin-top:24px}.hero-stage{height:450px;width:100%;overflow:hidden}.hero-hand{margin:auto}.primary-button{min-height:48px}}
+@media(max-width:620px){.hero-copy{order:0}.hero-stage{order:1}.case-gaming-note{font-size:11px;max-width:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
