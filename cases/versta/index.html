@@ -3,86 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Верста — кейс пассажирского PWA для заказа поездок.">
-  <title>Верста — пассажирский PWA</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./supervisor.css">
+  <meta name="description" content="Верста — пилот сервиса поездок: приложение пассажира, кабинет водителя и панель управления.">
+  <meta property="og:title" content="Верста — сервис поездок от заказа до контроля">
+  <meta property="og:description" content="Три роли, один сценарий: пассажир, водитель и команда сервиса.">
+  <meta property="og:image" content="./media/pilot/admin-dashboard.png">
+  <title>Верста — сервис поездок · M CHEKOV</title>
+  <link rel="stylesheet" href="./case.css">
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#top" aria-label="Верста, наверх">ВЕРСТА</a>
-    <nav aria-label="Разделы кейса">
-      <a href="#route">Маршрут</a>
-      <a href="#fare">Расчёт</a>
-      <a href="#result">Результат</a>
-    </nav>
-    <span>CASE 03 / 2026</span>
+    <a class="back" href="../../index.html#work">← <span>Все работы</span></a>
+    <a class="wordmark" href="#top" aria-label="Верста, наверх">ВЕРСТА<span>.</span></a>
+    <span>Кейс / 2026</span>
   </header>
-
   <main id="top">
-    <section class="hero">
+    <section class="hero wrap" aria-labelledby="case-title">
       <div class="hero-copy">
-        <p class="eyebrow">PASSENGER MOBILITY PWA</p>
-        <h1>Поездка.<br><em>Без лишних шагов.</em></h1>
-        <p class="lead">Маршрут, цена и заказ — на одном экране.</p>
-        <dl class="facts">
-          <div><dt>Роль</dt><dd>Product design</dd></div>
-          <div><dt>Формат</dt><dd>Mobile PWA</dd></div>
-          <div><dt>Система</dt><dd>Map-first flow</dd></div>
-        </dl>
+        <p class="eyebrow">ЦИФРОВОЙ СЕРВИС ПОЕЗДОК</p>
+        <h1 id="case-title">Поездка —<br><em>одна система.</em></h1>
+        <p class="lead">Пассажир заказывает машину. Водитель выполняет поездку. Команда видит, что происходит в сервисе.</p>
+        <div class="tags"><span>Пассажир</span><span>Водитель</span><span>Панель управления</span></div>
       </div>
-
-      <div class="hero-stage" aria-label="Три состояния пассажирского приложения">
-        <figure class="phone phone-pickup">
-          <div class="shot-crop"><img src="./media/pickup-public.png" alt="Выбор точки подачи на светлой карте"></div>
-        </figure>
-        <figure class="phone phone-route">
-          <div class="shot-crop"><img src="./media/route-light.png" alt="Маршрут на светлой карте"></div>
-        </figure>
-        <figure class="phone phone-fare">
-          <div class="shot-crop"><img src="./media/fare-card.png" alt="Карточка расчёта и тарифов"></div>
-        </figure>
-        <p class="stage-note"><b>01</b><span>От точки на карте<br>до готового заказа</span></p>
+      <div class="hero-stage" aria-label="Экраны пассажира, водителя и панели управления">
+        <figure class="browser hero-admin"><div class="browser-bar"><i></i><i></i><i></i><span>Панель управления</span></div><img src="./media/pilot/admin-dashboard.png" alt="Админ-панель: текущие заказы, водители и спрос"></figure>
+        <figure class="device hero-passenger"><img src="./media/pilot/passenger-fare.png" alt="Пассажир выбирает маршрут и тариф"><figcaption>Пассажир</figcaption></figure>
+        <figure class="device hero-driver"><img src="./media/pilot/driver-new-order.png" alt="Водитель видит новый заказ"><figcaption>Водитель</figcaption></figure>
       </div>
     </section>
-
-    <section class="statement" id="result">
-      <p class="eyebrow">ПРИНЦИП</p>
-      <h2>Пользователь видит главное.<br>Система делает остальное.</h2>
-      <div class="metrics" aria-label="Параметры демонстрационного маршрута">
-        <div><strong>6 мин</strong><span>в пути</span></div>
-        <div><strong>2,4 км</strong><span>маршрут</span></div>
-        <div><strong>3 состояния</strong><span>до заказа</span></div>
-      </div>
+    <nav class="role-nav wrap" aria-label="Сценарии кейса">
+      <a href="#passenger"><span>01 / Пассажир</span><b>Заказать поездку</b><i>↗</i></a>
+      <a href="#driver"><span>02 / Водитель</span><b>Выполнить заказ</b><i>↗</i></a>
+      <a href="#operator"><span>03 / Команда</span><b>Управлять сервисом</b><i>↗</i></a>
+    </nav>
+    <section class="intro wrap" aria-labelledby="intro-title">
+      <p class="label">ЗАДАЧА ПРОДУКТА</p>
+      <div><h2 id="intro-title">Все участники поездки видят своё — и работают вместе.</h2><p>Заказ, водитель и контроль сервиса не должны жить в разных местах. Верста соединяет их в одном процессе: от расчёта цены до завершения поездки и просмотра результата.</p></div>
     </section>
-
-    <section class="feature feature-map" id="route">
-      <div class="feature-copy">
-        <p class="index">01 / МАРШРУТ</p>
-        <h2>Точка подачи понятна сразу.</h2>
-        <p>Карта, адрес и основное действие собраны в одной спокойной композиции. Следующий экран показывает весь маршрут.</p>
-      </div>
-      <figure class="screen-panel">
-        <div class="shot-crop"><img src="./media/pickup-public.png" alt="Пассажир выбирает точку подачи на карте"></div>
-      </figure>
+    <section class="story passenger" id="passenger" aria-labelledby="passenger-title"><div class="wrap story-grid">
+      <div class="story-copy"><p class="label">01 / ПАССАЖИР</p><h2 id="passenger-title">Маршрут и цена — до заказа.</h2><p>Пассажир указывает адреса, выбирает тариф и видит стоимость. После заказа приложение показывает ход поездки и итог.</p><div class="detail"><span>На экране</span><strong>Маршрут · тариф · статус</strong></div></div>
+      <div class="mobile-pair"><figure class="device"><img loading="lazy" src="./media/pilot/passenger-fare.png" alt="Адреса маршрута, тарифы и цена в приложении пассажира"><figcaption>Выбор поездки</figcaption></figure><figure class="device"><img loading="lazy" src="./media/pilot/passenger-completed.png" alt="Завершённая поездка в приложении пассажира"><figcaption>Завершение</figcaption></figure></div>
+    </div></section>
+    <section class="story driver" id="driver" aria-labelledby="driver-title"><div class="wrap story-grid">
+      <div class="story-copy"><p class="label">02 / ВОДИТЕЛЬ</p><h2 id="driver-title">Заказ приходит с нужными деталями.</h2><p>Водитель видит маршрут и стоимость нового заказа, а после выполнения — историю поездок и доход за день.</p><div class="detail"><span>На экране</span><strong>Новый заказ · доход</strong></div></div>
+      <div class="mobile-pair"><figure class="device"><img loading="lazy" src="./media/pilot/driver-new-order.png" alt="Новый заказ: маршрут, цена и действия для водителя"><figcaption>Новый заказ</figcaption></figure><figure class="device"><img loading="lazy" src="./media/pilot/driver-earnings.png" alt="Доход водителя и история выполненной поездки"><figcaption>Доход и история</figcaption></figure></div>
+    </div></section>
+    <section class="operator wrap" id="operator" aria-labelledby="operator-title">
+      <div class="operator-head"><div><p class="label">03 / КОМАНДА СЕРВИСА</p><h2 id="operator-title">Картина работы — в одной панели.</h2></div><p>Оператору доступны текущие заказы, водители, спрос, аналитика и финансовый обзор. Можно быстро увидеть, где нужно внимание.</p></div>
+      <figure class="browser"><div class="browser-bar"><i></i><i></i><i></i><span>Главная панель</span></div><img loading="lazy" src="./media/pilot/admin-dashboard.png" alt="Главная панель с текущими заказами, водителями и спросом"><figcaption>Текущая работа сервиса</figcaption></figure>
+      <div class="operator-more"><figure class="browser"><div class="browser-bar"><i></i><i></i><i></i><span>Аналитика</span></div><img loading="lazy" src="./media/pilot/admin-analytics.png" alt="Динамика пассажиров и водителей"><figcaption>Спрос и рост</figcaption></figure><figure class="browser"><div class="browser-bar"><i></i><i></i><i></i><span>Финансы</span></div><img loading="lazy" src="./media/pilot/admin-finance.png" alt="Финансовый обзор пилотной панели"><figcaption>Финансовый обзор</figcaption></figure></div>
     </section>
-
-    <section class="feature feature-fare" id="fare">
-      <figure class="screen-panel">
-        <div class="shot-crop"><img src="./media/fare-card.png" alt="Пассажир выбирает режим, тариф и оплату"></div>
-      </figure>
-      <div class="feature-copy">
-        <p class="index">02 / РАСЧЁТ</p>
-        <h2>Цена понятна до подтверждения.</h2>
-        <p>Режим поездки, тариф и способ оплаты находятся внутри одного последовательного шага.</p>
-      </div>
-    </section>
-
-    <section class="closing">
-      <p>Реальный интерфейс · светлая карта · пассажирский сценарий</p>
-      <h2>Верста</h2>
-      <span>Поездки под контролем</span>
-    </section>
+    <section class="flow"><div class="wrap"><p class="label">ОДИН СЦЕНАРИЙ</p><h2>От заказа до результата.</h2><ol><li><span>01</span><b>Пассажир</b><small>Выбирает маршрут и тариф</small></li><li><span>02</span><b>Водитель</b><small>Получает и выполняет заказ</small></li><li><span>03</span><b>Команда</b><small>Видит поездки и показатели</small></li></ol></div></section>
+    <footer class="case-footer wrap"><div><p class="label">О ПРОЕКТЕ</p><h2>Верста<span>.</span></h2><p>Пилот сервиса поездок: интерфейсы пассажира, водителя и команды управления. Экраны и показатели в кейсе содержат демонстрационные данные.</p></div><a href="../../index.html#work">Смотреть другие работы <span>↗</span></a></footer>
   </main>
 </body>
 </html>
