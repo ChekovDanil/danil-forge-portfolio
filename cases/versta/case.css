@@ -24,3 +24,5 @@
 @media(max-width:700px){.device img{mask-image:radial-gradient(ellipse 20px 5px at 50% 9px,transparent 98%,#000 100%)}}
 .device img{mask-image:none}.device-camera{position:absolute;z-index:3;top:12px;left:50%;translate:-50% 0;width:29%;height:13px;background:#111416;border-radius:20px}.device-camera:after{content:"";position:absolute;right:8%;top:30%;width:4px;height:4px;border-radius:50%;background:#222830}
 @media(max-width:700px){.device img{mask-image:none}.device-camera{top:9px;height:10px}}
+.device.native-status:before,.device.native-status:after,.native-status .device-camera{display:none}
+.hero-stage>.device{align-self:start}

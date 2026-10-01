@@ -18,3 +18,14 @@
 .phone{background:linear-gradient(140deg,#3a3e45,#111416 22%,#262b31 84%,#666d75);box-shadow:0 25px 60px #0004,0 1px 1px #ffffff55 inset}.phone img{border:1px solid #7b808a33}
 .versta-desktop{aspect-ratio:1.95}.leadline-window{width:62%;right:3%;top:15%}
 @media(max-width:760px){.versta-desktop{aspect-ratio:1.95}.leadline-window{width:92%;left:5%;right:auto;top:50%}}
+
+/* Quiet silver-blue accents and a light-traced action, without a filled pill. */
+:root{--accent:#c6d4ef;--muted:#a1a6b0;--line:#2b2e34}
+h1{font-weight:500;letter-spacing:-.055em}h1 em{color:#c6d4ef}.lead{color:#b0b4bd;font-weight:400;line-height:1.55}.eyebrow{font-weight:500;letter-spacing:.14em}.header nav{font-weight:450}
+.button{position:relative;isolation:isolate;min-height:54px;padding:16px 23px;border:1px solid transparent;border-radius:11px;background:linear-gradient(#14171d,#111318) padding-box,linear-gradient(115deg,#455066 5%,#8fafd4 28%,#d7e8ff 42%,#52627a 64%,#303744 86%) border-box;color:#f2f5fa;font-size:15px;font-weight:500;letter-spacing:-.015em;box-shadow:0 1px 0 #d3e2ff0d inset,0 0 20px #779dd412;transition:box-shadow .25s,border-color .25s,transform .25s}
+.button:before{content:"";position:absolute;z-index:-1;left:18%;right:36%;top:-1px;height:1px;background:#e1edff;box-shadow:0 0 8px 2px #9bbcea88;pointer-events:none}
+.button span{display:grid;place-items:center;width:21px;height:21px;color:#bed0eb;font-size:18px;font-weight:400}.button:hover{background:linear-gradient(#1a1e26,#15181f) padding-box,linear-gradient(115deg,#60718d,#e3efff 42%,#546985 74%,#384254) border-box;box-shadow:0 0 28px #779dd42b;transform:translateY(-1px)}
+.hero-scene:before{background:radial-gradient(ellipse at 52% 56%,#34426045,transparent 64%)}.arrow-link{border-color:#495267}.project-info h3,.section-head h2{font-weight:500}
+.app-frame{padding:5px;border:1px solid #69707c;border-radius:18px;background:linear-gradient(145deg,#414852,#14171c 25%,#22272f 85%,#5b6573);box-shadow:0 26px 65px #0006,0 1px 1px #ffffff55 inset}.app-titlebar{display:flex;align-items:center;justify-content:space-between;padding:5px 7px 7px;color:#bac2cf;font-size:8px;line-height:1.2}.app-titlebar i{font-style:normal;color:#89929f}.app-screen{overflow:hidden;border-radius:10px;background:#101211}.app-screen img{margin-top:-7.4%;border-radius:0}
+.native-status .statusbar{display:none}.phone.native-status:after{display:none}
+@media(max-width:760px){.button{min-height:52px;font-size:14px}.app-frame{padding:4px;border-radius:13px}.app-titlebar{font-size:6px;padding:4px 4px 5px}.app-screen{border-radius:7px}}
